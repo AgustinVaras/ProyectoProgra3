@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AppArticulos
 {
-    public partial class Form1 : Form
+    public partial class Ventana_Principal : Form
     {
-        public Form1()
+        public Ventana_Principal()
         {
             InitializeComponent();
         }
