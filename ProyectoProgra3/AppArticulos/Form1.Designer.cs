@@ -71,6 +71,7 @@ namespace AppArticulos
             this.Boton_Agregar.TabIndex = 3;
             this.Boton_Agregar.Text = "Agregar";
             this.Boton_Agregar.UseVisualStyleBackColor = true;
+            this.Boton_Agregar.Click += new System.EventHandler(this.Boton_Agregar_Click);
             // 
             // Boton_Modificar
             // 
@@ -80,6 +81,7 @@ namespace AppArticulos
             this.Boton_Modificar.TabIndex = 4;
             this.Boton_Modificar.Text = "Modificar";
             this.Boton_Modificar.UseVisualStyleBackColor = true;
+            this.Boton_Modificar.Click += new System.EventHandler(this.Boton_Modificar_Click);
             // 
             // Boton_Eliminar
             // 

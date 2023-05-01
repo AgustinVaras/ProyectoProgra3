@@ -16,5 +16,17 @@ namespace AppArticulos
         {
             InitializeComponent();
         }
+
+        private void Boton_Agregar_Click(object sender, EventArgs e)
+        {
+            VentanaAgregar Ventana_Agregar = new VentanaAgregar();
+            Ventana_Agregar.ShowDialog();
+        }
+
+        private void Boton_Modificar_Click(object sender, EventArgs e)
+        {
+            VentanaModificar Ventana_Modificar = new VentanaModificar();
+            Ventana_Modificar.ShowDialog();
+        }
     }
 }
