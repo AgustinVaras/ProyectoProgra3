@@ -10,11 +10,23 @@ using System.Windows.Forms;
 
 namespace AppArticulos
 {
-    public partial class Form1 : Form
+    public partial class Ventana_Principal : Form
     {
-        public Form1()
+        public Ventana_Principal()
         {
             InitializeComponent();
+        }
+
+        private void Boton_Agregar_Click(object sender, EventArgs e)
+        {
+            VentanaAgregar Ventana_Agregar = new VentanaAgregar();
+            Ventana_Agregar.ShowDialog();
+        }
+
+        private void Boton_Modificar_Click(object sender, EventArgs e)
+        {
+            VentanaModificar Ventana_Modificar = new VentanaModificar();
+            Ventana_Modificar.ShowDialog();
         }
     }
 }
