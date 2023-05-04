@@ -40,7 +40,7 @@ namespace AppArticulos
                     aux.Codigo = aux.Codigo = (string)lector["Codigo"];
                     aux.Nombre = (string)lector["Nombre"];
                     aux.Descripcion = (string)lector["Descripcion"];
-                    //aux.Precio = Decimal.Round((decimal)lector["Precio"], 2);
+                    aux.Precio = Decimal.Round((decimal)lector["Precio"], 2);
 
                     lista.Add(aux);
 
