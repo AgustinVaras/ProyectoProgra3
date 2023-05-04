@@ -29,7 +29,7 @@ namespace AppArticulos
         /// </summary>
         private void InitializeComponent()
         {
-            this.TextBox_CodigoArticulo = new System.Windows.Forms.TextBox();
+            this.txtCodigoArticulo = new System.Windows.Forms.TextBox();
             this.Label_CodigoArticulo = new System.Windows.Forms.Label();
             this.Label_Nombre = new System.Windows.Forms.Label();
             this.Label_Marca = new System.Windows.Forms.Label();
@@ -37,149 +37,187 @@ namespace AppArticulos
             this.Label_Precio = new System.Windows.Forms.Label();
             this.Label_Descripcion = new System.Windows.Forms.Label();
             this.Label_Imagen = new System.Windows.Forms.Label();
-            this.TextBox_Nombre = new System.Windows.Forms.TextBox();
-            this.TextBox_Precio = new System.Windows.Forms.TextBox();
-            this.TextBox_Descripcion = new System.Windows.Forms.TextBox();
-            this.ComboBox_Marca = new System.Windows.Forms.ComboBox();
-            this.ComboBox_Categoria = new System.Windows.Forms.ComboBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtPrecio = new System.Windows.Forms.TextBox();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.cbMarca = new System.Windows.Forms.ComboBox();
+            this.cbCategoria = new System.Windows.Forms.ComboBox();
+            this.grbFormulario = new System.Windows.Forms.GroupBox();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.grbFormulario.SuspendLayout();
             this.SuspendLayout();
             // 
-            // TextBox_CodigoArticulo
+            // txtCodigoArticulo
             // 
-            this.TextBox_CodigoArticulo.Location = new System.Drawing.Point(159, 25);
-            this.TextBox_CodigoArticulo.Name = "TextBox_CodigoArticulo";
-            this.TextBox_CodigoArticulo.Size = new System.Drawing.Size(153, 20);
-            this.TextBox_CodigoArticulo.TabIndex = 0;
+            this.txtCodigoArticulo.Location = new System.Drawing.Point(113, 32);
+            this.txtCodigoArticulo.Name = "txtCodigoArticulo";
+            this.txtCodigoArticulo.Size = new System.Drawing.Size(153, 20);
+            this.txtCodigoArticulo.TabIndex = 0;
             // 
             // Label_CodigoArticulo
             // 
             this.Label_CodigoArticulo.AutoSize = true;
-            this.Label_CodigoArticulo.Location = new System.Drawing.Point(39, 28);
+            this.Label_CodigoArticulo.Location = new System.Drawing.Point(23, 35);
             this.Label_CodigoArticulo.Name = "Label_CodigoArticulo";
-            this.Label_CodigoArticulo.Size = new System.Drawing.Size(78, 13);
+            this.Label_CodigoArticulo.Size = new System.Drawing.Size(84, 13);
             this.Label_CodigoArticulo.TabIndex = 1;
-            this.Label_CodigoArticulo.Text = "Codigo Articulo";
+            this.Label_CodigoArticulo.Text = "Codigo Articulo: ";
             // 
             // Label_Nombre
             // 
             this.Label_Nombre.AutoSize = true;
-            this.Label_Nombre.Location = new System.Drawing.Point(42, 58);
+            this.Label_Nombre.Location = new System.Drawing.Point(26, 65);
             this.Label_Nombre.Name = "Label_Nombre";
-            this.Label_Nombre.Size = new System.Drawing.Size(44, 13);
+            this.Label_Nombre.Size = new System.Drawing.Size(50, 13);
             this.Label_Nombre.TabIndex = 2;
-            this.Label_Nombre.Text = "Nombre";
+            this.Label_Nombre.Text = "Nombre: ";
             // 
             // Label_Marca
             // 
             this.Label_Marca.AutoSize = true;
-            this.Label_Marca.Location = new System.Drawing.Point(42, 91);
+            this.Label_Marca.Location = new System.Drawing.Point(26, 98);
             this.Label_Marca.Name = "Label_Marca";
-            this.Label_Marca.Size = new System.Drawing.Size(37, 13);
+            this.Label_Marca.Size = new System.Drawing.Size(43, 13);
             this.Label_Marca.TabIndex = 3;
-            this.Label_Marca.Text = "Marca";
+            this.Label_Marca.Text = "Marca: ";
             // 
             // Label_Categoria
             // 
             this.Label_Categoria.AutoSize = true;
-            this.Label_Categoria.Location = new System.Drawing.Point(42, 122);
+            this.Label_Categoria.Location = new System.Drawing.Point(26, 129);
             this.Label_Categoria.Name = "Label_Categoria";
-            this.Label_Categoria.Size = new System.Drawing.Size(52, 13);
+            this.Label_Categoria.Size = new System.Drawing.Size(58, 13);
             this.Label_Categoria.TabIndex = 4;
-            this.Label_Categoria.Text = "Categoria";
+            this.Label_Categoria.Text = "Categoria: ";
             // 
             // Label_Precio
             // 
             this.Label_Precio.AutoSize = true;
-            this.Label_Precio.Location = new System.Drawing.Point(42, 154);
+            this.Label_Precio.Location = new System.Drawing.Point(26, 161);
             this.Label_Precio.Name = "Label_Precio";
-            this.Label_Precio.Size = new System.Drawing.Size(37, 13);
+            this.Label_Precio.Size = new System.Drawing.Size(43, 13);
             this.Label_Precio.TabIndex = 5;
-            this.Label_Precio.Text = "Precio";
+            this.Label_Precio.Text = "Precio: ";
             // 
             // Label_Descripcion
             // 
             this.Label_Descripcion.AutoSize = true;
-            this.Label_Descripcion.Location = new System.Drawing.Point(42, 187);
+            this.Label_Descripcion.Location = new System.Drawing.Point(26, 194);
             this.Label_Descripcion.Name = "Label_Descripcion";
-            this.Label_Descripcion.Size = new System.Drawing.Size(63, 13);
+            this.Label_Descripcion.Size = new System.Drawing.Size(69, 13);
             this.Label_Descripcion.TabIndex = 6;
-            this.Label_Descripcion.Text = "Descripcion";
+            this.Label_Descripcion.Text = "Descripcion: ";
             // 
             // Label_Imagen
             // 
             this.Label_Imagen.AutoSize = true;
-            this.Label_Imagen.Location = new System.Drawing.Point(45, 221);
+            this.Label_Imagen.Location = new System.Drawing.Point(29, 228);
             this.Label_Imagen.Name = "Label_Imagen";
             this.Label_Imagen.Size = new System.Drawing.Size(42, 13);
             this.Label_Imagen.TabIndex = 7;
             this.Label_Imagen.Text = "Imagen";
             // 
-            // TextBox_Nombre
+            // txtNombre
             // 
-            this.TextBox_Nombre.Location = new System.Drawing.Point(159, 58);
-            this.TextBox_Nombre.Name = "TextBox_Nombre";
-            this.TextBox_Nombre.Size = new System.Drawing.Size(153, 20);
-            this.TextBox_Nombre.TabIndex = 8;
+            this.txtNombre.Location = new System.Drawing.Point(113, 65);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(153, 20);
+            this.txtNombre.TabIndex = 8;
             // 
-            // TextBox_Precio
+            // txtPrecio
             // 
-            this.TextBox_Precio.Location = new System.Drawing.Point(159, 146);
-            this.TextBox_Precio.Name = "TextBox_Precio";
-            this.TextBox_Precio.Size = new System.Drawing.Size(153, 20);
-            this.TextBox_Precio.TabIndex = 9;
+            this.txtPrecio.Location = new System.Drawing.Point(113, 161);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(153, 20);
+            this.txtPrecio.TabIndex = 9;
+            this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecio_KeyPress);
             // 
-            // TextBox_Descripcion
+            // txtDescripcion
             // 
-            this.TextBox_Descripcion.Location = new System.Drawing.Point(159, 179);
-            this.TextBox_Descripcion.Name = "TextBox_Descripcion";
-            this.TextBox_Descripcion.Size = new System.Drawing.Size(153, 20);
-            this.TextBox_Descripcion.TabIndex = 10;
+            this.txtDescripcion.Location = new System.Drawing.Point(113, 191);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(153, 20);
+            this.txtDescripcion.TabIndex = 10;
             // 
-            // ComboBox_Marca
+            // cbMarca
             // 
-            this.ComboBox_Marca.FormattingEnabled = true;
-            this.ComboBox_Marca.Location = new System.Drawing.Point(159, 91);
-            this.ComboBox_Marca.Name = "ComboBox_Marca";
-            this.ComboBox_Marca.Size = new System.Drawing.Size(153, 21);
-            this.ComboBox_Marca.TabIndex = 11;
+            this.cbMarca.FormattingEnabled = true;
+            this.cbMarca.Location = new System.Drawing.Point(113, 95);
+            this.cbMarca.Name = "cbMarca";
+            this.cbMarca.Size = new System.Drawing.Size(153, 21);
+            this.cbMarca.TabIndex = 11;
             // 
-            // ComboBox_Categoria
+            // cbCategoria
             // 
-            this.ComboBox_Categoria.FormattingEnabled = true;
-            this.ComboBox_Categoria.Location = new System.Drawing.Point(159, 119);
-            this.ComboBox_Categoria.Name = "ComboBox_Categoria";
-            this.ComboBox_Categoria.Size = new System.Drawing.Size(153, 21);
-            this.ComboBox_Categoria.TabIndex = 12;
+            this.cbCategoria.FormattingEnabled = true;
+            this.cbCategoria.Location = new System.Drawing.Point(113, 126);
+            this.cbCategoria.Name = "cbCategoria";
+            this.cbCategoria.Size = new System.Drawing.Size(153, 21);
+            this.cbCategoria.TabIndex = 12;
+            // 
+            // grbFormulario
+            // 
+            this.grbFormulario.Controls.Add(this.Label_CodigoArticulo);
+            this.grbFormulario.Controls.Add(this.cbCategoria);
+            this.grbFormulario.Controls.Add(this.txtCodigoArticulo);
+            this.grbFormulario.Controls.Add(this.cbMarca);
+            this.grbFormulario.Controls.Add(this.Label_Nombre);
+            this.grbFormulario.Controls.Add(this.txtDescripcion);
+            this.grbFormulario.Controls.Add(this.Label_Marca);
+            this.grbFormulario.Controls.Add(this.txtPrecio);
+            this.grbFormulario.Controls.Add(this.Label_Categoria);
+            this.grbFormulario.Controls.Add(this.txtNombre);
+            this.grbFormulario.Controls.Add(this.Label_Precio);
+            this.grbFormulario.Controls.Add(this.Label_Imagen);
+            this.grbFormulario.Controls.Add(this.Label_Descripcion);
+            this.grbFormulario.Location = new System.Drawing.Point(25, 12);
+            this.grbFormulario.Name = "grbFormulario";
+            this.grbFormulario.Size = new System.Drawing.Size(327, 291);
+            this.grbFormulario.TabIndex = 13;
+            this.grbFormulario.TabStop = false;
+            this.grbFormulario.Text = "Formulario";
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Location = new System.Drawing.Point(213, 321);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(138, 45);
+            this.btnAgregar.TabIndex = 14;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(25, 321);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(138, 45);
+            this.btnCancelar.TabIndex = 15;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // VentanaAgregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(343, 268);
-            this.Controls.Add(this.ComboBox_Categoria);
-            this.Controls.Add(this.ComboBox_Marca);
-            this.Controls.Add(this.TextBox_Descripcion);
-            this.Controls.Add(this.TextBox_Precio);
-            this.Controls.Add(this.TextBox_Nombre);
-            this.Controls.Add(this.Label_Imagen);
-            this.Controls.Add(this.Label_Descripcion);
-            this.Controls.Add(this.Label_Precio);
-            this.Controls.Add(this.Label_Categoria);
-            this.Controls.Add(this.Label_Marca);
-            this.Controls.Add(this.Label_Nombre);
-            this.Controls.Add(this.Label_CodigoArticulo);
-            this.Controls.Add(this.TextBox_CodigoArticulo);
+            this.ClientSize = new System.Drawing.Size(379, 394);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnAgregar);
+            this.Controls.Add(this.grbFormulario);
             this.Name = "VentanaAgregar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VentanaAgregar";
+            this.grbFormulario.ResumeLayout(false);
+            this.grbFormulario.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TextBox TextBox_CodigoArticulo;
+        private System.Windows.Forms.TextBox txtCodigoArticulo;
         private System.Windows.Forms.Label Label_CodigoArticulo;
         private System.Windows.Forms.Label Label_Nombre;
         private System.Windows.Forms.Label Label_Marca;
@@ -187,10 +225,13 @@ namespace AppArticulos
         private System.Windows.Forms.Label Label_Precio;
         private System.Windows.Forms.Label Label_Descripcion;
         private System.Windows.Forms.Label Label_Imagen;
-        private System.Windows.Forms.TextBox TextBox_Nombre;
-        private System.Windows.Forms.TextBox TextBox_Precio;
-        private System.Windows.Forms.TextBox TextBox_Descripcion;
-        private System.Windows.Forms.ComboBox ComboBox_Marca;
-        private System.Windows.Forms.ComboBox ComboBox_Categoria;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtPrecio;
+        private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.ComboBox cbMarca;
+        private System.Windows.Forms.ComboBox cbCategoria;
+        private System.Windows.Forms.GroupBox grbFormulario;
+        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }
