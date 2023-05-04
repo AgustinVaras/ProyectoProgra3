@@ -431,3 +431,5 @@ FodyWeavers.xsd
 *.db
 .vs/
 Publish/
+/ProyectoProgra3/AppArticulos/App.config
+/ProyectoProgra3/AppArticulos/AppArticulos.csproj

@@ -9,7 +9,7 @@ namespace AppArticulos
     class Articulo
     {
         //Constructor
-        public Articulo(int id, int idMarca, int idCategoria, float precio, string nombre, string descripcion)
+        public Articulo(int id, int idMarca, int idCategoria, float precio, string nombre, string descripcion, string codigo)
         {
             this.id = id;
             this.idMarca = idMarca;
@@ -17,6 +17,7 @@ namespace AppArticulos
             this.precio = precio;
             this.nombre = nombre;
             this.descripcion = descripcion;
+            this.codigo = codigo;
         }
         //Constructor vacio
         public Articulo()
@@ -31,6 +32,7 @@ namespace AppArticulos
         private float precio;
         private int idMarca;
         private int idCategoria;
+        private string codigo;
 
         //Propiedades set & get
         public int Id
@@ -65,6 +67,11 @@ namespace AppArticulos
             set { descripcion = value; }
         }
 
-
+        public string Codigo 
+        {
+            get { return codigo; }
+            set { codigo = value; }
+        
+        }
     }
 }
