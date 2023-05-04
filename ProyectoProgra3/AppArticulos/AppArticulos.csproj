@@ -66,6 +66,12 @@
     <Compile Include="VentanaAgregar.Designer.cs">
       <DependentUpon>VentanaAgregar.cs</DependentUpon>
     </Compile>
+    <Compile Include="VentanaDetalles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaDetalles.Designer.cs">
+      <DependentUpon>VentanaDetalles.cs</DependentUpon>
+    </Compile>
     <Compile Include="VentanaModificar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +93,9 @@
     </Compile>
     <EmbeddedResource Include="VentanaAgregar.resx">
       <DependentUpon>VentanaAgregar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaDetalles.resx">
+      <DependentUpon>VentanaDetalles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaModificar.resx">
       <DependentUpon>VentanaModificar.cs</DependentUpon>

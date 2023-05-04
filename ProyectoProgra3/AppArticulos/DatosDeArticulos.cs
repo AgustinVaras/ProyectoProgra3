@@ -27,7 +27,7 @@ namespace AppArticulos
                 ///Conexion a la DB SQL
                 conexion.ConnectionString = "server=.\\SQLEXPRESS; database=CATALOGO_DB_v3; integrated security=true;";
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "Select Codigo, Nombre, Descripcion, Precio from ARTICULOS";
+                comando.CommandText = "SELECT Codigo, Nombre, Descripcion, Precio FROM ARTICULOS";
                 comando.Connection = conexion;
                 
                 conexion.Open();
@@ -40,7 +40,7 @@ namespace AppArticulos
                     aux.Codigo = aux.Codigo = (string)lector["Codigo"];
                     aux.Nombre = (string)lector["Nombre"];
                     aux.Descripcion = (string)lector["Descripcion"];
-                    //aux.Precio = Decimal.Round((decimal)lector["Precio"], 2);
+                    aux.Precio = Decimal.Round((decimal)lector["Precio"], 2);
 
                     lista.Add(aux);
 
