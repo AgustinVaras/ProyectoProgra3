@@ -42,6 +42,9 @@ namespace AppArticulos
             cboCriterioBusqueda.Items.Add("Nombre");
             cboCriterioBusqueda.Items.Add("Marca");
             cboCriterioBusqueda.Items.Add("Categoria");
+
+            DatosDeArticulos negocio = new DatosDeArticulos();
+            dgvPrincipal.DataSource = negocio.listar();
         }
     }
 }
