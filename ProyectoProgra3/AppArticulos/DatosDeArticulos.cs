@@ -25,7 +25,7 @@ namespace AppArticulos
             {
                 
                 ///Conexion a la DB SQL
-                conexion.ConnectionString = "server=.\\SQLEXPRESS; database=CATALOGO_DB_v3; integrated security=true;";
+                conexion.ConnectionString = "server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true;";
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = "SELECT Codigo, Nombre, Descripcion, Precio FROM ARTICULOS";
                 comando.Connection = conexion;
