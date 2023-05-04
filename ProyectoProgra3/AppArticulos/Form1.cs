@@ -43,5 +43,8 @@ namespace AppArticulos
             cboCriterioBusqueda.Items.Add("Marca");
             cboCriterioBusqueda.Items.Add("Categoria");
         }
+
+        
+
     }
 }
