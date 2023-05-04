@@ -170,6 +170,7 @@ namespace AppArticulos
             this.Controls.Add(this.Label_CodigoArticulo);
             this.Controls.Add(this.TextBox_CodigoArticulo);
             this.Name = "VentanaAgregar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VentanaAgregar";
             this.ResumeLayout(false);
             this.PerformLayout();
