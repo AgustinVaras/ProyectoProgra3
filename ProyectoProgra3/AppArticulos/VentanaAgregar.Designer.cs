@@ -50,6 +50,7 @@ namespace AppArticulos
             this.rtxtDescripcion = new System.Windows.Forms.RichTextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnEliminarImg = new System.Windows.Forms.Button();
             this.grbFormulario.SuspendLayout();
             this.gbImagen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).BeginInit();
@@ -180,6 +181,7 @@ namespace AppArticulos
             // 
             // gbImagen
             // 
+            this.gbImagen.Controls.Add(this.btnEliminarImg);
             this.gbImagen.Controls.Add(this.pbImagen);
             this.gbImagen.Controls.Add(this.btnCargarImagen);
             this.gbImagen.Controls.Add(this.txtUrl);
@@ -257,6 +259,16 @@ namespace AppArticulos
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // btnEliminarImg
+            // 
+            this.btnEliminarImg.Location = new System.Drawing.Point(108, 176);
+            this.btnEliminarImg.Name = "btnEliminarImg";
+            this.btnEliminarImg.Size = new System.Drawing.Size(140, 23);
+            this.btnEliminarImg.TabIndex = 18;
+            this.btnEliminarImg.Text = "Eliminar Url Seleccionada";
+            this.btnEliminarImg.UseVisualStyleBackColor = true;
+            this.btnEliminarImg.Click += new System.EventHandler(this.btnEliminarImg_Click);
+            // 
             // VentanaAgregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -301,5 +313,6 @@ namespace AppArticulos
         private System.Windows.Forms.TextBox txtUrl;
         private System.Windows.Forms.ListView lwImagenes;
         private System.Windows.Forms.PictureBox pbImagen;
+        private System.Windows.Forms.Button btnEliminarImg;
     }
 }

@@ -123,5 +123,11 @@ namespace AppArticulos
         {
             this.Close();
         }
+
+        private void btnEliminarImg_Click(object sender, EventArgs e)
+        {
+            lwImagenes.FocusedItem.Remove();
+            CargarImagen("");
+        }
     }
 }
