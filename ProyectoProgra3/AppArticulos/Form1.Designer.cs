@@ -42,11 +42,11 @@ namespace AppArticulos
             this.gbxBusqueda = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Boton_Detalles = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvPrincipal = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
             this.gbxBusqueda.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPrincipal)).BeginInit();
             this.SuspendLayout();
             // 
             // TextBox_Buscar
@@ -147,7 +147,7 @@ namespace AppArticulos
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.Boton_Detalles);
-            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.dgvPrincipal);
             this.groupBox1.Location = new System.Drawing.Point(17, 76);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(502, 341);
@@ -164,13 +164,13 @@ namespace AppArticulos
             this.Boton_Detalles.UseVisualStyleBackColor = true;
             this.Boton_Detalles.Click += new System.EventHandler(this.Boton_Detalles_Click);
             // 
-            // dataGridView1
+            // dgvPrincipal
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(17, 14);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(476, 274);
-            this.dataGridView1.TabIndex = 7;
+            this.dgvPrincipal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPrincipal.Location = new System.Drawing.Point(17, 14);
+            this.dgvPrincipal.Name = "dgvPrincipal";
+            this.dgvPrincipal.Size = new System.Drawing.Size(476, 274);
+            this.dgvPrincipal.TabIndex = 7;
             // 
             // Ventana_Principal
             // 
@@ -191,7 +191,7 @@ namespace AppArticulos
             this.gbxBusqueda.ResumeLayout(false);
             this.gbxBusqueda.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPrincipal)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -211,7 +211,7 @@ namespace AppArticulos
         private System.Windows.Forms.GroupBox gbxBusqueda;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button Boton_Detalles;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvPrincipal;
     }
 }
 
