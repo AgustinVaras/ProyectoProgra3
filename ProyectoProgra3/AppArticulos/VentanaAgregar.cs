@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Clases;
 
 namespace AppArticulos
 {
@@ -23,8 +24,9 @@ namespace AppArticulos
             try
             {
                 art.Nombre = txtNombre.Text;
-                art.Precio = float.Parse(txtPrecio.Text);
-
+                art.Precio = decimal.Parse(txtPrecio.Text);
+                art.Descripcion = rtxtDescripcion.Text;
+                art.Codigo = txtCodigoArticulo.Text;
             }
             catch (Exception ex)
             {
@@ -51,6 +53,11 @@ namespace AppArticulos
             {
                 e.Handled = true;
             }
+        }
+
+        private void VentanaAgregar_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

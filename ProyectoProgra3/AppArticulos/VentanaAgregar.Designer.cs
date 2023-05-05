@@ -39,12 +39,12 @@ namespace AppArticulos
             this.Label_Imagen = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtPrecio = new System.Windows.Forms.TextBox();
-            this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.cbMarca = new System.Windows.Forms.ComboBox();
             this.cbCategoria = new System.Windows.Forms.ComboBox();
             this.grbFormulario = new System.Windows.Forms.GroupBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.rtxtDescripcion = new System.Windows.Forms.RichTextBox();
             this.grbFormulario.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,7 +67,7 @@ namespace AppArticulos
             // Label_Nombre
             // 
             this.Label_Nombre.AutoSize = true;
-            this.Label_Nombre.Location = new System.Drawing.Point(26, 65);
+            this.Label_Nombre.Location = new System.Drawing.Point(57, 68);
             this.Label_Nombre.Name = "Label_Nombre";
             this.Label_Nombre.Size = new System.Drawing.Size(50, 13);
             this.Label_Nombre.TabIndex = 2;
@@ -76,7 +76,7 @@ namespace AppArticulos
             // Label_Marca
             // 
             this.Label_Marca.AutoSize = true;
-            this.Label_Marca.Location = new System.Drawing.Point(26, 98);
+            this.Label_Marca.Location = new System.Drawing.Point(64, 98);
             this.Label_Marca.Name = "Label_Marca";
             this.Label_Marca.Size = new System.Drawing.Size(43, 13);
             this.Label_Marca.TabIndex = 3;
@@ -85,7 +85,7 @@ namespace AppArticulos
             // Label_Categoria
             // 
             this.Label_Categoria.AutoSize = true;
-            this.Label_Categoria.Location = new System.Drawing.Point(26, 129);
+            this.Label_Categoria.Location = new System.Drawing.Point(49, 129);
             this.Label_Categoria.Name = "Label_Categoria";
             this.Label_Categoria.Size = new System.Drawing.Size(58, 13);
             this.Label_Categoria.TabIndex = 4;
@@ -94,7 +94,7 @@ namespace AppArticulos
             // Label_Precio
             // 
             this.Label_Precio.AutoSize = true;
-            this.Label_Precio.Location = new System.Drawing.Point(26, 161);
+            this.Label_Precio.Location = new System.Drawing.Point(64, 161);
             this.Label_Precio.Name = "Label_Precio";
             this.Label_Precio.Size = new System.Drawing.Size(43, 13);
             this.Label_Precio.TabIndex = 5;
@@ -103,7 +103,7 @@ namespace AppArticulos
             // Label_Descripcion
             // 
             this.Label_Descripcion.AutoSize = true;
-            this.Label_Descripcion.Location = new System.Drawing.Point(26, 194);
+            this.Label_Descripcion.Location = new System.Drawing.Point(38, 191);
             this.Label_Descripcion.Name = "Label_Descripcion";
             this.Label_Descripcion.Size = new System.Drawing.Size(69, 13);
             this.Label_Descripcion.TabIndex = 6;
@@ -112,7 +112,7 @@ namespace AppArticulos
             // Label_Imagen
             // 
             this.Label_Imagen.AutoSize = true;
-            this.Label_Imagen.Location = new System.Drawing.Point(29, 228);
+            this.Label_Imagen.Location = new System.Drawing.Point(49, 308);
             this.Label_Imagen.Name = "Label_Imagen";
             this.Label_Imagen.Size = new System.Drawing.Size(42, 13);
             this.Label_Imagen.TabIndex = 7;
@@ -133,13 +133,6 @@ namespace AppArticulos
             this.txtPrecio.TabIndex = 9;
             this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecio_KeyPress);
             // 
-            // txtDescripcion
-            // 
-            this.txtDescripcion.Location = new System.Drawing.Point(113, 191);
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(153, 20);
-            this.txtDescripcion.TabIndex = 10;
-            // 
             // cbMarca
             // 
             this.cbMarca.FormattingEnabled = true;
@@ -158,12 +151,12 @@ namespace AppArticulos
             // 
             // grbFormulario
             // 
+            this.grbFormulario.Controls.Add(this.rtxtDescripcion);
             this.grbFormulario.Controls.Add(this.Label_CodigoArticulo);
             this.grbFormulario.Controls.Add(this.cbCategoria);
             this.grbFormulario.Controls.Add(this.txtCodigoArticulo);
             this.grbFormulario.Controls.Add(this.cbMarca);
             this.grbFormulario.Controls.Add(this.Label_Nombre);
-            this.grbFormulario.Controls.Add(this.txtDescripcion);
             this.grbFormulario.Controls.Add(this.Label_Marca);
             this.grbFormulario.Controls.Add(this.txtPrecio);
             this.grbFormulario.Controls.Add(this.Label_Categoria);
@@ -173,14 +166,14 @@ namespace AppArticulos
             this.grbFormulario.Controls.Add(this.Label_Descripcion);
             this.grbFormulario.Location = new System.Drawing.Point(25, 12);
             this.grbFormulario.Name = "grbFormulario";
-            this.grbFormulario.Size = new System.Drawing.Size(327, 291);
+            this.grbFormulario.Size = new System.Drawing.Size(368, 345);
             this.grbFormulario.TabIndex = 13;
             this.grbFormulario.TabStop = false;
             this.grbFormulario.Text = "Formulario";
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(213, 321);
+            this.btnAgregar.Location = new System.Drawing.Point(255, 378);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(138, 45);
             this.btnAgregar.TabIndex = 14;
@@ -190,7 +183,7 @@ namespace AppArticulos
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(25, 321);
+            this.btnCancelar.Location = new System.Drawing.Point(25, 378);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(138, 45);
             this.btnCancelar.TabIndex = 15;
@@ -198,17 +191,26 @@ namespace AppArticulos
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // rtxtDescripcion
+            // 
+            this.rtxtDescripcion.Location = new System.Drawing.Point(113, 191);
+            this.rtxtDescripcion.Name = "rtxtDescripcion";
+            this.rtxtDescripcion.Size = new System.Drawing.Size(212, 111);
+            this.rtxtDescripcion.TabIndex = 13;
+            this.rtxtDescripcion.Text = "";
+            // 
             // VentanaAgregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(379, 394);
+            this.ClientSize = new System.Drawing.Size(420, 458);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.grbFormulario);
             this.Name = "VentanaAgregar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VentanaAgregar";
+            this.Load += new System.EventHandler(this.VentanaAgregar_Load);
             this.grbFormulario.ResumeLayout(false);
             this.grbFormulario.PerformLayout();
             this.ResumeLayout(false);
@@ -227,11 +229,11 @@ namespace AppArticulos
         private System.Windows.Forms.Label Label_Imagen;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtPrecio;
-        private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.ComboBox cbMarca;
         private System.Windows.Forms.ComboBox cbCategoria;
         private System.Windows.Forms.GroupBox grbFormulario;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.RichTextBox rtxtDescripcion;
     }
 }
