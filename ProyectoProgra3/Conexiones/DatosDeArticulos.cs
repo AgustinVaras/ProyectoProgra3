@@ -76,7 +76,25 @@ namespace Conexiones
 
 
 
+        public void Agregar(Articulo nuevo)
+        {
+            AccesoSQL datos = new AccesoSQL();
 
+            try
+            {
+                datos.Consulta("Insert into ARTICULOS(Codigo, Nombre, Descripcion, Precio, IdCategoria, IdMarca) VALUES('" + nuevo.Codigo + "', '" + nuevo.Nombre + "' , '" + nuevo.Descripcion + "' , '" + nuevo.Precio + "' , '"+ nuevo.IdCategoria +"' , '"+ nuevo.IdMarca +"')");
+                datos.EjecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+        }
 
 
 

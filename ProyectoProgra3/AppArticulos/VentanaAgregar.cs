@@ -36,11 +36,18 @@ namespace AppArticulos
                 art.IdCategoria = categoria.Id;
                 art.IdMarca = marca.Id;
 
+                dato.Agregar(art);
+                MessageBox.Show("Agregado con éxito!");
+
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                this.Close();
             }
         }
 
