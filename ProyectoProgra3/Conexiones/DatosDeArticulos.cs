@@ -96,6 +96,29 @@ namespace Conexiones
             }
         }
 
+        public int Agregar_getId(Articulo nuevo)
+        {
+            AccesoSQL datos = new AccesoSQL();
+            int id;
+            try
+            {
+                datos.Consulta("Insert into ARTICULOS(Codigo, Nombre, Descripcion, Precio, IdCategoria, IdMarca) output INSERTED.Id VALUES('" + nuevo.Codigo + "', '" + nuevo.Nombre + "' , '" + nuevo.Descripcion + "' , '" + nuevo.Precio + "' , '" + nuevo.IdCategoria + "' , '" + nuevo.IdMarca + "')");
+                id = datos.EjecutarScalar();
+                
+                return id;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+                
+            }
+        }
+
 
 
 

@@ -10,33 +10,37 @@ namespace Conexiones
     public class AccesoSQL
     {
         private SqlConnection Conexion;
-        private SqlCommand Comando;
+        private SqlCommand comando;
         private SqlDataReader lector;
 
         public SqlDataReader Lector
         {
             get { return lector; }
         }
+        public SqlCommand Comando
+        {
+            get { return comando; }
+        }
 
         public AccesoSQL()
         {
             Conexion = new SqlConnection("server =.\\SQLEXPRESS; database = CATALOGO_P3_DB; integrated security=true");
-            Comando = new SqlCommand();
+            comando = new SqlCommand();
         }
 
         public void Consulta(string consulta)
         {
-            Comando.CommandType = System.Data.CommandType.Text;
-            Comando.CommandText = consulta;
+            comando.CommandType = System.Data.CommandType.Text;
+            comando.CommandText = consulta;
         }
 
         public void EjecutarLectura()
         {
-            Comando.Connection = Conexion;
+            comando.Connection = Conexion;
             try
             {
                 Conexion.Open();
-                lector = Comando.ExecuteReader();
+                lector = comando.ExecuteReader();
             }
             catch (Exception ex)
             {
@@ -47,11 +51,28 @@ namespace Conexiones
 
         public void EjecutarAccion()
         {
-            Comando.Connection = Conexion;
+            comando.Connection = Conexion;
             try
             {
                 Conexion.Open();
-                Comando.ExecuteNonQuery();
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public int EjecutarScalar()
+        {
+            comando.Connection = Conexion;
+            int idEjecucion;
+            try
+            {
+                Conexion.Open();
+                idEjecucion =  (int)comando.ExecuteScalar();
+                return idEjecucion;
             }
             catch (Exception ex)
             {
@@ -62,7 +83,7 @@ namespace Conexiones
 
         public void SetParametros(string Nombre, object Valor)
         {
-            Comando.Parameters.AddWithValue(Nombre, Valor);
+            comando.Parameters.AddWithValue(Nombre, Valor);
         }
 
         public void CerrarConexion()
