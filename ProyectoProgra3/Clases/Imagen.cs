@@ -27,6 +27,12 @@ namespace Clases
 
         }
 
+        //Sobrecarga ToString();
+        public override string ToString()
+        {
+            return imagenUrl;
+        }
+
         //Propiedades set & get
         public int Id
         {

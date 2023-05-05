@@ -44,6 +44,7 @@
     <Compile Include="AccesoSQL.cs" />
     <Compile Include="CategoriaDatos.cs" />
     <Compile Include="DatosDeArticulos.cs" />
+    <Compile Include="ImagenesDatos.cs" />
     <Compile Include="MarcaDatos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
