@@ -7,23 +7,23 @@ using Clases;
 
 namespace Conexiones
 {
-    public class CategoriaDatos
+    public class MarcaDatos
     {
-        public List<Categoria> Listar()
+        public List<Marca> Listar()
         {
-            List<Categoria> Listar = new List<Categoria>();
+            List<Marca> Listar = new List<Marca>();
             AccesoSQL Datos = new AccesoSQL();
 
             try
             {
-                Datos.Consulta("Select Id, Descripcion as Categ From CATEGORIAS");
+                Datos.Consulta("Select Id, Descripcion as Marca From MARCAS");
                 Datos.EjecutarLectura();
 
                 while (Datos.Lector.Read())
                 {
-                    Categoria aux = new Categoria();
+                    Marca aux = new Marca();
                     aux.Id = (int)Datos.Lector["Id"];
-                    aux.Descripcion = (string)Datos.Lector["Categ"];
+                    aux.Descripcion = (string)Datos.Lector["Marca"];
                     Listar.Add(aux);
                 }
                 return Listar;

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Clases;
+using Conexiones;
 
 namespace AppArticulos
 {
@@ -57,7 +58,18 @@ namespace AppArticulos
 
         private void VentanaAgregar_Load(object sender, EventArgs e)
         {
+            CategoriaDatos categorias = new CategoriaDatos();
+            MarcaDatos marcas = new MarcaDatos();
+            try
+            {
+                cbCategoria.DataSource = categorias.Listar();
+                cbMarca.DataSource = marcas.Listar();
+            }
+            catch (Exception ex)
+            {
 
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }

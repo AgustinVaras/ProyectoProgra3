@@ -25,6 +25,12 @@ namespace Clases
 
         }
 
+        //Metodo ToString
+        public override string ToString()
+        {
+            return descripcion;
+        }
+
         //Propiedades set & get
         public int Id
         {

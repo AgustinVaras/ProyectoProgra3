@@ -20,7 +20,7 @@ namespace Conexiones
 
         public AccesoSQL()
         {
-            Conexion = new SqlConnection("server =.\\SQLEXPRESS; database = CATALOGO_DB; integrated security=true");
+            Conexion = new SqlConnection("server =.\\SQLEXPRESS; database = CATALOGO_P3_DB; integrated security=true");
             Comando = new SqlCommand();
         }
 
