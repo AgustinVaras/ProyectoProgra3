@@ -4,25 +4,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AppArticulos
+namespace Clases
 {
-    internal class Marca
+    public class Categoria
     {
         //Atributos
         private int id;
         private string descripcion;
 
         //Constructor
-        public Marca(int id, string descripcion)
+        public Categoria(int id, string descripcion)
         {
             this.id = id;
             this.descripcion = descripcion;
         }
 
         //Constructor vacio
-        public Marca()
+        public Categoria()
         {
 
+        }
+
+        //Sobrecarga de ToString
+        public override string ToString()
+        {
+            return descripcion;
         }
 
         //Propiedades set & get
@@ -33,7 +39,7 @@ namespace AppArticulos
         }
         public string Descripcion
         {
-            get { return descripcion; } 
+            get { return descripcion; }
             set { descripcion = value; }
         }
     }

@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AppArticulos
+namespace Clases
 {
-    class Articulo
+    public class Articulo
     {
         //Constructor
-        public Articulo(int id, int idMarca, int idCategoria, float precio, string nombre, string descripcion, string codigo)
+        public Articulo(int id, int idMarca, int idCategoria, decimal precio, string nombre, string descripcion, string codigo)
         {
             this.id = id;
             this.idMarca = idMarca;
@@ -29,7 +29,7 @@ namespace AppArticulos
         private int id;
         private string nombre;
         private string descripcion;
-        private float precio;
+        private decimal precio;
         private int idMarca;
         private int idCategoria;
         private string codigo;
@@ -50,7 +50,7 @@ namespace AppArticulos
             get { return idCategoria; }
             set { idCategoria = value; }
         }
-        public float Precio
+        public decimal Precio
         {
             get { return precio; }
             set { precio = value; }

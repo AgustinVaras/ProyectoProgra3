@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AppArticulos
+namespace Clases
 {
-    internal class Imagen
+    public class Imagen
     {
         //Atributos
         private int id;
