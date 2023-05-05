@@ -22,12 +22,20 @@ namespace AppArticulos
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             Articulo art = new Articulo();
+            DatosDeArticulos dato = new DatosDeArticulos();
             try
             {
+                Categoria categoria = (Categoria)cbCategoria.SelectedItem;
+                Marca marca = (Marca)cbMarca.SelectedItem;
+                
                 art.Nombre = txtNombre.Text;
                 art.Precio = decimal.Parse(txtPrecio.Text);
                 art.Descripcion = rtxtDescripcion.Text;
                 art.Codigo = txtCodigoArticulo.Text;
+
+                art.IdCategoria = categoria.Id;
+                art.IdMarca = marca.Id;
+
             }
             catch (Exception ex)
             {
