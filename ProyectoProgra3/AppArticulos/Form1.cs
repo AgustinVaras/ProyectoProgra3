@@ -20,6 +20,19 @@ namespace AppArticulos
             InitializeComponent();
         }
 
+        private void ActulizarListado()
+        {
+            try
+            {
+                //Agregar columnas
+                dgvPrincipal.DataSource = listaArticulos;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
         private void Boton_Agregar_Click(object sender, EventArgs e)
         {
             try
@@ -72,17 +85,6 @@ namespace AppArticulos
             VentanaDetalles.ShowDialog();
         }
 
-        private void Ventana_Principal_Load(object sender, EventArgs e)
-        {
-            cboCriterioBusqueda.Items.Add("Id");
-            cboCriterioBusqueda.Items.Add("Codigo");
-            cboCriterioBusqueda.Items.Add("Nombre");
-            cboCriterioBusqueda.Items.Add("Marca");
-            cboCriterioBusqueda.Items.Add("Categoria");
-
-            DatosDeArticulos negocio = new DatosDeArticulos();
-            listaArticulos = negocio.listar();
-            dgvPrincipal.DataSource = listaArticulos;
-        }
+        
     }
 }
