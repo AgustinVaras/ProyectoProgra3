@@ -15,6 +15,7 @@ namespace AppArticulos
     public partial class Ventana_Principal : Form
     {
         private List<Articulo> listaArticulos;
+        private List<Articulo> busquedaArticulos;
         public Ventana_Principal()
         {
             InitializeComponent();
@@ -68,14 +69,21 @@ namespace AppArticulos
         private void Ventana_Principal_Load(object sender, EventArgs e)
         {
             cboCriterioBusqueda.Items.Add("Id");
-            cboCriterioBusqueda.Items.Add("Codigo");
+            cboCriterioBusqueda.Items.Add("IdMarca");
+            cboCriterioBusqueda.Items.Add("IdCategoria");
             cboCriterioBusqueda.Items.Add("Nombre");
-            cboCriterioBusqueda.Items.Add("Marca");
-            cboCriterioBusqueda.Items.Add("Categoria");
+            cboCriterioBusqueda.Items.Add("Codigo");
 
             DatosDeArticulos negocio = new DatosDeArticulos();
             listaArticulos = negocio.listar();
             dgvPrincipal.DataSource = listaArticulos;
+        }
+
+        private void Boton_Buscar_Click(object sender, EventArgs e)
+        {
+            DatosDeArticulos datos = new DatosDeArticulos();
+            busquedaArticulos = datos.Buscar(TextBox_Buscar.Text, cboCriterioBusqueda.Text);
+            dgvPrincipal.DataSource = busquedaArticulos;
         }
     }
 }

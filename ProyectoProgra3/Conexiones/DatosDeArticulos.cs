@@ -23,8 +23,6 @@ namespace Conexiones
             List<Articulo> lista = new List<Articulo>();
             AccesoSQL Datos = new AccesoSQL();
 
-
-
             try
             {
 
@@ -51,30 +49,20 @@ namespace Conexiones
                     aux.Descripcion = (string)Datos.Lector["Descripcion"];
                     aux.Precio = Decimal.Round((decimal)Datos.Lector["Precio"], 2);
 
-
                     lista.Add(aux);
-
-
                 }
                     return lista;
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             finally
             {
                 //conexion.Close();
                 Datos.CerrarConexion();
-            }
-            
-        
-        
-        
+            }                               
         }
-
-
 
         public void Agregar(Articulo nuevo)
         {
@@ -119,10 +107,41 @@ namespace Conexiones
             }
         }
 
+        public List<Articulo> Buscar(string busqueda, string criterio)
+        {
+            List<Articulo> lista = new List<Articulo>();
+            AccesoSQL Datos = new AccesoSQL();
 
+            try
+            {
+                criterio = "A." + criterio;
+                Datos.Consulta("Select A.Id, A.Codigo, A.Nombre, A.Descripcion, A.Precio , C.Id Categoria, M.Id Marca From ARTICULOS A  Inner Join MARCAS M on A.IdMarca = M.Id Inner Join CATEGORIAS C on A.IdCategoria = C.Id where " + busqueda + " like " + criterio);
+                Datos.EjecutarLectura();
 
+                while (Datos.Lector.Read())
+                {
+                    Articulo aux = new Articulo();
+                    aux.Id = (int)Datos.Lector["Id"];
+                    aux.IdCategoria = (int)Datos.Lector["Categoria"];
+                    aux.IdMarca = (int)Datos.Lector["Marca"];
+                    aux.Codigo = (string)Datos.Lector["Codigo"];
+                    aux.Nombre = (string)Datos.Lector["Nombre"];
+                    aux.Descripcion = (string)Datos.Lector["Descripcion"];
+                    aux.Precio = Decimal.Round((decimal)Datos.Lector["Precio"], 2);
 
-
+                    lista.Add(aux);
+                }
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Datos.CerrarConexion();
+            }
+        }
 
     }
 
