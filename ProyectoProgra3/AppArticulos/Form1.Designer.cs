@@ -64,6 +64,7 @@ namespace AppArticulos
             this.Boton_Buscar.TabIndex = 2;
             this.Boton_Buscar.Text = "Buscar";
             this.Boton_Buscar.UseVisualStyleBackColor = true;
+            this.Boton_Buscar.Click += new System.EventHandler(this.Boton_Buscar_Click);
             // 
             // lblBusqueda
             // 

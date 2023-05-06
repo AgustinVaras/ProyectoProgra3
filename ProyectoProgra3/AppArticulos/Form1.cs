@@ -15,6 +15,7 @@ namespace AppArticulos
     public partial class Ventana_Principal : Form
     {
         private List<Articulo> listaArticulos;
+        private List<Articulo> busquedaArticulos;
         public Ventana_Principal()
         {
             InitializeComponent();
@@ -87,6 +88,11 @@ namespace AppArticulos
 
         private void itemModificar_Click(object sender, EventArgs e)
         {
+            cboCriterioBusqueda.Items.Add("Id");
+            cboCriterioBusqueda.Items.Add("IdMarca");
+            cboCriterioBusqueda.Items.Add("IdCategoria");
+            cboCriterioBusqueda.Items.Add("Nombre");
+            cboCriterioBusqueda.Items.Add("Codigo");
 
             Articulo Seleccion;
             Seleccion = (Articulo)dgvPrincipal.CurrentRow.DataBoundItem;
@@ -96,6 +102,17 @@ namespace AppArticulos
 
 
 
+        }
+
+        private void Boton_Buscar_Click(object sender, EventArgs e)
+        {
+            DatosDeArticulos datos = new DatosDeArticulos();
+            busquedaArticulos = datos.Buscar(TextBox_Buscar.Text, cboCriterioBusqueda.Text);
+            
+            if (!busquedaArticulos.Any<Articulo>())
+                MessageBox.Show("Su búsqueda no arrojó ningún resultado");
+            else
+                dgvPrincipal.DataSource = busquedaArticulos;
         }
     }
 }
