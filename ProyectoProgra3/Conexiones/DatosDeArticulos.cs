@@ -86,6 +86,26 @@ namespace Conexiones
             }
         }
 
+        public void Modificar(Articulo modificar)
+        {
+            AccesoSQL datos = new AccesoSQL();
+
+            try
+            {
+                datos.Consulta("UPDATE into ARTICULOS(Codigo, Nombre, Descripcion, Precio, IdCategoria, IdMarca) VALUES('" + modificar.Codigo + "', '" + modificar.Nombre + "' , '" + modificar.Descripcion + "' , '" + modificar.Precio + "' , '" + modificar.IdCategoria + "' , '" + modificar.IdMarca + "')");
+                datos.EjecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+        }
+
         public List<Articulo> Buscar(string busqueda, string criterio)
         {
             AccesoSQL Datos = new AccesoSQL();
@@ -108,26 +128,6 @@ namespace Conexiones
                         aux.Nombre = (string)Datos.Lector["Nombre"];
                         aux.Descripcion = (string)Datos.Lector["Descripcion"];
                         aux.Precio = Decimal.Round((decimal)Datos.Lector["Precio"], 2);
-
-        public void Modificar(Articulo modificar)
-        {
-            AccesoSQL datos = new AccesoSQL();
-
-            try
-            {
-                datos.Consulta("UPDATE into ARTICULOS(Codigo, Nombre, Descripcion, Precio, IdCategoria, IdMarca) VALUES('" + modificar.Codigo + "', '" + modificar.Nombre + "' , '" + modificar.Descripcion + "' , '" + modificar.Precio + "' , '" + modificar.IdCategoria + "' , '" + modificar.IdMarca + "')");
-                datos.EjecutarAccion();
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-            finally
-            {
-                datos.CerrarConexion();
-            }
-        }
 
                         lista.Add(aux);
                     }
