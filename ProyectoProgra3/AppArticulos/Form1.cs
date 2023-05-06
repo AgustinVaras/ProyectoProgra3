@@ -85,6 +85,17 @@ namespace AppArticulos
             VentanaDetalles.ShowDialog();
         }
 
-        
+        private void itemModificar_Click(object sender, EventArgs e)
+        {
+
+            Articulo Seleccion;
+            Seleccion = (Articulo)dgvPrincipal.CurrentRow.DataBoundItem;
+
+            VentanaAgregar Modificar = new VentanaAgregar(Seleccion);
+            Modificar.ShowDialog();
+
+
+
+        }
     }
 }

@@ -121,7 +121,25 @@ namespace Conexiones
 
 
 
+        public void Modificar(Articulo modificar)
+        {
+            AccesoSQL datos = new AccesoSQL();
 
+            try
+            {
+                datos.Consulta("UPDATE into ARTICULOS(Codigo, Nombre, Descripcion, Precio, IdCategoria, IdMarca) VALUES('" + modificar.Codigo + "', '" + modificar.Nombre + "' , '" + modificar.Descripcion + "' , '" + modificar.Precio + "' , '" + modificar.IdCategoria + "' , '" + modificar.IdMarca + "')");
+                datos.EjecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+        }
 
 
     }
