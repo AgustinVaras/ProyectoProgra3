@@ -10,36 +10,18 @@ namespace Conexiones
 {
     public class DatosDeArticulos
     {
-
         public List<Articulo> listar() 
         {
-            ///SQL 
-            //SqlConnection conexion = new SqlConnection();
-            //SqlCommand comando = new SqlCommand();
-
-            ///Instancia DataReader
-            //SqlDataReader lector;
-
             List<Articulo> lista = new List<Articulo>();
             AccesoSQL Datos = new AccesoSQL();
 
             try
             {
-
-                ///Conexion a la DB SQL
-                //conexion.ConnectionString = "server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true;";
-                //comando.CommandType = System.Data.CommandType.Text;
-                //comando.CommandText = "Select Codigo, Nombre, Descripcion, Precio from ARTICULOS";
-                //comando.Connection = conexion;
-
-                //conexion.Open();
-                //lector = comando.ExecuteReader();
                 Datos.Consulta("Select A.Id, A.Codigo, A.Nombre, A.Descripcion, A.Precio , C.Id Categoria, M.Id Marca From ARTICULOS A  Inner Join MARCAS M on A.IdMarca = M.Id Inner Join CATEGORIAS C on A.IdCategoria = C.Id");
                 Datos.EjecutarLectura();
 
                 while (Datos.Lector.Read())
                 {
-
                     Articulo aux = new Articulo();
                     aux.Id = (int)Datos.Lector["Id"];
                     aux.IdCategoria = (int)Datos.Lector["Categoria"];
@@ -59,7 +41,6 @@ namespace Conexiones
             }
             finally
             {
-                //conexion.Close();
                 Datos.CerrarConexion();
             }                               
         }
@@ -75,7 +56,6 @@ namespace Conexiones
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             finally
@@ -88,6 +68,7 @@ namespace Conexiones
         {
             AccesoSQL datos = new AccesoSQL();
             int id;
+
             try
             {
                 datos.Consulta("Insert into ARTICULOS(Codigo, Nombre, Descripcion, Precio, IdCategoria, IdMarca) output INSERTED.Id VALUES('" + nuevo.Codigo + "', '" + nuevo.Nombre + "' , '" + nuevo.Descripcion + "' , '" + nuevo.Precio + "' , '" + nuevo.IdCategoria + "' , '" + nuevo.IdMarca + "')");
@@ -97,40 +78,40 @@ namespace Conexiones
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             finally
             {
                 datos.CerrarConexion();
-                
             }
         }
 
         public List<Articulo> Buscar(string busqueda, string criterio)
         {
-            List<Articulo> lista = new List<Articulo>();
             AccesoSQL Datos = new AccesoSQL();
+            List<Articulo> lista = new List<Articulo>();
 
             try
             {
-                criterio = "A." + criterio;
-                Datos.Consulta("Select A.Id, A.Codigo, A.Nombre, A.Descripcion, A.Precio , C.Id Categoria, M.Id Marca From ARTICULOS A  Inner Join MARCAS M on A.IdMarca = M.Id Inner Join CATEGORIAS C on A.IdCategoria = C.Id where " + busqueda + " like " + criterio);
-                Datos.EjecutarLectura();
-
-                while (Datos.Lector.Read())
+                if (ManejoDeBusqueda(busqueda, criterio))
                 {
-                    Articulo aux = new Articulo();
-                    aux.Id = (int)Datos.Lector["Id"];
-                    aux.IdCategoria = (int)Datos.Lector["Categoria"];
-                    aux.IdMarca = (int)Datos.Lector["Marca"];
-                    aux.Codigo = (string)Datos.Lector["Codigo"];
-                    aux.Nombre = (string)Datos.Lector["Nombre"];
-                    aux.Descripcion = (string)Datos.Lector["Descripcion"];
-                    aux.Precio = Decimal.Round((decimal)Datos.Lector["Precio"], 2);
+                    criterio = ManejoDeCriterio(criterio);
+                    Datos.Consulta("Select A.Id, A.Codigo, A.Nombre, A.Descripcion, A.Precio , C.Id Categoria, M.Id Marca From ARTICULOS A  Inner Join MARCAS M on A.IdMarca = M.Id Inner Join CATEGORIAS C on A.IdCategoria = C.Id where " + busqueda + " like " + criterio);
+                    Datos.EjecutarLectura();
+                    while (Datos.Lector.Read())
+                    {
+                        Articulo aux = new Articulo();
+                        aux.Id = (int)Datos.Lector["Id"];
+                        aux.IdCategoria = (int)Datos.Lector["Categoria"];
+                        aux.IdMarca = (int)Datos.Lector["Marca"];
+                        aux.Codigo = (string)Datos.Lector["Codigo"];
+                        aux.Nombre = (string)Datos.Lector["Nombre"];
+                        aux.Descripcion = (string)Datos.Lector["Descripcion"];
+                        aux.Precio = Decimal.Round((decimal)Datos.Lector["Precio"], 2);
 
-                    lista.Add(aux);
-                }
+                        lista.Add(aux);
+                    }
+                }            
                 return lista;
             }
             catch (Exception ex)
@@ -143,6 +124,19 @@ namespace Conexiones
             }
         }
 
-    }
+        private string ManejoDeCriterio(string criterio)
+        {
+            return "A." + criterio;
+        }
 
+        private bool ManejoDeBusqueda(string busqueda, string criterio)
+        {
+            if(criterio == "Id" || criterio == "IdMarca" || criterio == "IdCategoria")
+            {
+               bool isWrongType = int.TryParse(busqueda, out int id);
+               return isWrongType;
+            }              
+            else return true;
+        }
+    }
 }

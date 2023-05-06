@@ -83,7 +83,11 @@ namespace AppArticulos
         {
             DatosDeArticulos datos = new DatosDeArticulos();
             busquedaArticulos = datos.Buscar(TextBox_Buscar.Text, cboCriterioBusqueda.Text);
-            dgvPrincipal.DataSource = busquedaArticulos;
+            
+            if (!busquedaArticulos.Any<Articulo>())
+                MessageBox.Show("Su búsqueda no arrojó ningún resultado");
+            else
+                dgvPrincipal.DataSource = busquedaArticulos;
         }
     }
 }
