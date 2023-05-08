@@ -110,14 +110,6 @@ namespace AppArticulos
                 articulo.IdCategoria = categoria.Id;
                 articulo.IdMarca = marca.Id;
 
-
-                int id = dato.Agregar_getId(articulo);
-                foreach (Imagen img in imagenes)
-                {
-                    img.IdArticulo = id;
-                    imgData.Agregar(img);
-                }
-
                 if(articulo.Id != 0)
                 {
                     dato.Modificar(articulo);
@@ -127,7 +119,12 @@ namespace AppArticulos
                 
                 else
                 {
-                    dato.Agregar(articulo);
+                    int id = dato.Agregar_getId(articulo);
+                    foreach (Imagen img in imagenes)
+                    {
+                        img.IdArticulo = id;
+                        imgData.Agregar(img);
+                    }
                     MessageBox.Show("Agregado exitosamente");
                 }
 
