@@ -34,10 +34,30 @@ namespace AppArticulos
             }
         }
 
-        private void itemModificar_Click_1(object sender, EventArgs e)
+        private void Boton_Agregar_Click(object sender, EventArgs e)
         {
-            VentanaModificar Ventana_Modificar = new VentanaModificar();
-            Ventana_Modificar.ShowDialog();
+            try
+            {
+                //Agregar columnas
+                dgvPrincipal.DataSource = listaArticulos;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        private void Ventana_Principal_Load(object sender, EventArgs e)
+        {
+            cboCriterioBusqueda.Items.Add("Id");
+            cboCriterioBusqueda.Items.Add("Codigo");
+            cboCriterioBusqueda.Items.Add("Nombre");
+            cboCriterioBusqueda.Items.Add("Marca");
+            cboCriterioBusqueda.Items.Add("Categoria");
+
+            DatosDeArticulos negocio = new DatosDeArticulos();
+            listaArticulos = negocio.listar();
+            dgvPrincipal.DataSource = listaArticulos;
         }
 
         private void itemAgregar_Click_1(object sender, EventArgs e)
@@ -66,7 +86,7 @@ namespace AppArticulos
             VentanaDetalles.ShowDialog();
         }
 
-        private void Ventana_Principal_Load(object sender, EventArgs e)
+        private void itemModificar_Click(object sender, EventArgs e)
         {
             cboCriterioBusqueda.Items.Add("Id");
             cboCriterioBusqueda.Items.Add("Nombre");
@@ -74,9 +94,14 @@ namespace AppArticulos
             cboCriterioBusqueda.Items.Add("IdMarca");
             cboCriterioBusqueda.Items.Add("IdCategoria");
 
-            DatosDeArticulos negocio = new DatosDeArticulos();
-            listaArticulos = negocio.listar();
-            dgvPrincipal.DataSource = listaArticulos;
+            Articulo Seleccion;
+            Seleccion = (Articulo)dgvPrincipal.CurrentRow.DataBoundItem;
+
+            VentanaAgregar Modificar = new VentanaAgregar(Seleccion);
+            Modificar.ShowDialog();
+
+
+
         }
 
         private void Boton_Buscar_Click(object sender, EventArgs e)
@@ -88,6 +113,33 @@ namespace AppArticulos
                 MessageBox.Show("Su búsqueda no arrojó ningún resultado");
             else
                 dgvPrincipal.DataSource = busquedaArticulos;
+        }
+
+        private void itemEliminar_Click(object sender, EventArgs e)
+        {
+
+            DatosDeArticulos Negocio = new DatosDeArticulos();
+            Articulo Seleccion;
+            try
+            {
+                DialogResult Respuesta =  MessageBox.Show("Seguro que desea eliminar el articulo?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                
+                if(Respuesta == DialogResult.Yes)
+                {
+                    Seleccion = (Articulo)dgvPrincipal.CurrentRow.DataBoundItem;
+                    Negocio.Eliminar(Seleccion.Id);
+                    ActulizarListado();
+
+                }
+                
+               
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+
         }
     }
 }

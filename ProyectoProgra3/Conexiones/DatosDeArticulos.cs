@@ -86,6 +86,36 @@ namespace Conexiones
             }
         }
 
+        public void Modificar(Articulo modificar)
+        {
+            AccesoSQL datos = new AccesoSQL();
+
+            try
+            {
+                datos.Consulta("UPDATE ARTICULOS set Codigo = @Codigo, Nombre = @Nombre, Descripcion = @Descripcion, Precio = @Precio, IdCategoria = @Categoria, IdMarca = @Marca Where Id = @Id ");
+                
+                datos.SetParametros("@Id", modificar.Id);
+                
+                datos.SetParametros("@Codigo", modificar.Codigo);
+                datos.SetParametros("@Nombre", modificar.Nombre);
+                datos.SetParametros("@Descripcion", modificar.Descripcion);
+                datos.SetParametros("@Precio", modificar.Precio);
+                datos.SetParametros("@Categoria", modificar.IdCategoria);
+                datos.SetParametros("@Marca", modificar.IdMarca);
+                
+                datos.EjecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+        }
+
         public List<Articulo> Buscar(string busqueda, string criterio)
         {
             AccesoSQL Datos = new AccesoSQL();
@@ -125,5 +155,28 @@ namespace Conexiones
         {
             return "A." + criterio;
         }
+
+        public void Eliminar(int Id)
+        {
+           
+
+            try
+            {
+                AccesoSQL datos = new AccesoSQL();
+                datos.Consulta("DELETE from ARTICULOS where Id = @Id");
+                datos.SetParametros("@Id",Id);
+                datos.EjecutarAccion();
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
+        }
+
+
     }
 }

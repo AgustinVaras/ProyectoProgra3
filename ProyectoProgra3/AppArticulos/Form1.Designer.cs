@@ -77,6 +77,7 @@ namespace AppArticulos
             // 
             // cboCriterioBusqueda
             // 
+            this.cboCriterioBusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCriterioBusqueda.FormattingEnabled = true;
             this.cboCriterioBusqueda.Location = new System.Drawing.Point(77, 13);
             this.cboCriterioBusqueda.Name = "cboCriterioBusqueda";
@@ -123,15 +124,16 @@ namespace AppArticulos
             // itemModificar
             // 
             this.itemModificar.Name = "itemModificar";
-            this.itemModificar.Size = new System.Drawing.Size(125, 22);
+            this.itemModificar.Size = new System.Drawing.Size(180, 22);
             this.itemModificar.Text = "Modificar";
-            this.itemModificar.Click += new System.EventHandler(this.itemModificar_Click_1);
+            this.itemModificar.Click += new System.EventHandler(this.itemModificar_Click);
             // 
             // itemEliminar
             // 
             this.itemEliminar.Name = "itemEliminar";
-            this.itemEliminar.Size = new System.Drawing.Size(125, 22);
+            this.itemEliminar.Size = new System.Drawing.Size(180, 22);
             this.itemEliminar.Text = "Eliminar";
+            this.itemEliminar.Click += new System.EventHandler(this.itemEliminar_Click);
             // 
             // gbxBusqueda
             // 

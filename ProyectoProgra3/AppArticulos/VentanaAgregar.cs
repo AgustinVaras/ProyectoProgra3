@@ -15,10 +15,22 @@ namespace AppArticulos
     public partial class VentanaAgregar : Form
     {
         private List<Imagen> imagenes = new List<Imagen>();
+
+        private Articulo articulo = null;
+
         public VentanaAgregar()
         {
             InitializeComponent();
         }
+
+        public VentanaAgregar(Articulo articulo)
+        {
+            InitializeComponent();
+            this.articulo = articulo;
+            Text = "Modificar articulo";
+        }
+
+
         private void CargarImagen(string imagen)
         {
             try
@@ -34,13 +46,39 @@ namespace AppArticulos
 
         private void VentanaAgregar_Load(object sender, EventArgs e)
         {
+
+           
             pbImagen.SizeMode = PictureBoxSizeMode.StretchImage;
             CategoriaDatos categorias = new CategoriaDatos();
             MarcaDatos marcas = new MarcaDatos();
+            ImagenesDatos imgData = new ImagenesDatos();
+
             try
             {
                 cbCategoria.DataSource = categorias.Listar();
+                cbCategoria.ValueMember = "Id";
+                cbCategoria.DisplayMember = "Descripcion";
+
                 cbMarca.DataSource = marcas.Listar();
+                cbMarca.ValueMember = "Id";
+                cbCategoria.DisplayMember = "Descripcion";
+
+
+                if (articulo != null) 
+                {
+
+                    txtNombre.Text = articulo.Nombre;
+                    txtCodigoArticulo.Text = articulo.Codigo;
+                    rtxtDescripcion.Text = articulo.Descripcion;
+                    txtPrecio.Text = articulo.Precio.ToString();
+                    cbCategoria.SelectedValue = articulo.IdCategoria;
+                    cbMarca.SelectedValue = articulo.IdCategoria;
+                    //lwImagenes.item = imgData.Buscar("IdArticulo", articulo.Id.ToString());
+
+
+                }
+
+
             }
             catch (Exception ex)
             {
@@ -51,31 +89,44 @@ namespace AppArticulos
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            Articulo art = new Articulo();
+            //Articulo art = new Articulo();
             DatosDeArticulos dato = new DatosDeArticulos();
             ImagenesDatos imgData = new ImagenesDatos();
             try
             {
+                if (articulo == null)
+                    articulo = new Articulo();
+
+                
+
                 Categoria categoria = (Categoria)cbCategoria.SelectedItem;
                 Marca marca = (Marca)cbMarca.SelectedItem;
                 
-                art.Nombre = txtNombre.Text;
-                art.Precio = decimal.Parse(txtPrecio.Text);
-                art.Descripcion = rtxtDescripcion.Text;
-                art.Codigo = txtCodigoArticulo.Text;
+                articulo.Nombre = txtNombre.Text;
+                articulo.Precio = decimal.Parse(txtPrecio.Text);
+                articulo.Descripcion = rtxtDescripcion.Text;
+                articulo.Codigo = txtCodigoArticulo.Text;
 
-                art.IdCategoria = categoria.Id;
-                art.IdMarca = marca.Id;
+                articulo.IdCategoria = categoria.Id;
+                articulo.IdMarca = marca.Id;
 
-
-                int id = dato.Agregar_getId(art);
-                foreach (Imagen img in imagenes)
+                if(articulo.Id != 0)
                 {
-                    img.IdArticulo = id;
-                    imgData.Agregar(img);
-                }
+                    dato.Modificar(articulo);
+                    MessageBox.Show("Modificado con éxito!");
 
-                MessageBox.Show("Agregado con éxito!");
+                }
+                
+                else
+                {
+                    int id = dato.Agregar_getId(articulo);
+                    foreach (Imagen img in imagenes)
+                    {
+                        img.IdArticulo = id;
+                        imgData.Agregar(img);
+                    }
+                    MessageBox.Show("Agregado exitosamente");
+                }
 
             }
             catch (Exception ex)

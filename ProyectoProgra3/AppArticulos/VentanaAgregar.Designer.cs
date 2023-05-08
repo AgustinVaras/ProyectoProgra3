@@ -43,6 +43,7 @@ namespace AppArticulos
             this.cbCategoria = new System.Windows.Forms.ComboBox();
             this.grbFormulario = new System.Windows.Forms.GroupBox();
             this.gbImagen = new System.Windows.Forms.GroupBox();
+            this.btnEliminarImg = new System.Windows.Forms.Button();
             this.pbImagen = new System.Windows.Forms.PictureBox();
             this.btnCargarImagen = new System.Windows.Forms.Button();
             this.txtUrl = new System.Windows.Forms.TextBox();
@@ -50,7 +51,6 @@ namespace AppArticulos
             this.rtxtDescripcion = new System.Windows.Forms.RichTextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnEliminarImg = new System.Windows.Forms.Button();
             this.grbFormulario.SuspendLayout();
             this.gbImagen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).BeginInit();
@@ -143,6 +143,7 @@ namespace AppArticulos
             // 
             // cbMarca
             // 
+            this.cbMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMarca.FormattingEnabled = true;
             this.cbMarca.Location = new System.Drawing.Point(113, 82);
             this.cbMarca.Name = "cbMarca";
@@ -151,6 +152,7 @@ namespace AppArticulos
             // 
             // cbCategoria
             // 
+            this.cbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCategoria.FormattingEnabled = true;
             this.cbCategoria.Location = new System.Drawing.Point(113, 113);
             this.cbCategoria.Name = "cbCategoria";
@@ -193,6 +195,16 @@ namespace AppArticulos
             this.gbImagen.TabIndex = 16;
             this.gbImagen.TabStop = false;
             this.gbImagen.Text = "Imagenes";
+            // 
+            // btnEliminarImg
+            // 
+            this.btnEliminarImg.Location = new System.Drawing.Point(108, 176);
+            this.btnEliminarImg.Name = "btnEliminarImg";
+            this.btnEliminarImg.Size = new System.Drawing.Size(140, 23);
+            this.btnEliminarImg.TabIndex = 18;
+            this.btnEliminarImg.Text = "Eliminar Url Seleccionada";
+            this.btnEliminarImg.UseVisualStyleBackColor = true;
+            this.btnEliminarImg.Click += new System.EventHandler(this.btnEliminarImg_Click);
             // 
             // pbImagen
             // 
@@ -258,16 +270,6 @@ namespace AppArticulos
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // btnEliminarImg
-            // 
-            this.btnEliminarImg.Location = new System.Drawing.Point(108, 176);
-            this.btnEliminarImg.Name = "btnEliminarImg";
-            this.btnEliminarImg.Size = new System.Drawing.Size(140, 23);
-            this.btnEliminarImg.TabIndex = 18;
-            this.btnEliminarImg.Text = "Eliminar Url Seleccionada";
-            this.btnEliminarImg.UseVisualStyleBackColor = true;
-            this.btnEliminarImg.Click += new System.EventHandler(this.btnEliminarImg_Click);
             // 
             // VentanaAgregar
             // 
