@@ -92,7 +92,17 @@ namespace Conexiones
 
             try
             {
-                datos.Consulta("UPDATE into ARTICULOS(Codigo, Nombre, Descripcion, Precio, IdCategoria, IdMarca) VALUES('" + modificar.Codigo + "', '" + modificar.Nombre + "' , '" + modificar.Descripcion + "' , '" + modificar.Precio + "' , '" + modificar.IdCategoria + "' , '" + modificar.IdMarca + "')");
+                datos.Consulta("UPDATE ARTICULOS set Codigo = @Codigo, Nombre = @Nombre, Descripcion = @Descripcion, Precio = @Precio, IdCategoria = @Categoria, IdMarca = @Marca Where Id = @Id ");
+                
+                datos.SetParametros("@Id", modificar.Id);
+                
+                datos.SetParametros("@Codigo", modificar.Codigo);
+                datos.SetParametros("@Nombre", modificar.Nombre);
+                datos.SetParametros("@Descripcion", modificar.Descripcion);
+                datos.SetParametros("@Precio", modificar.Precio);
+                datos.SetParametros("@Categoria", modificar.IdCategoria);
+                datos.SetParametros("@Marca", modificar.IdMarca);
+                
                 datos.EjecutarAccion();
             }
             catch (Exception ex)
