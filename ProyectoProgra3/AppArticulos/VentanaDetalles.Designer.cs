@@ -217,7 +217,7 @@
             this.pbImagenes.Location = new System.Drawing.Point(4, 4);
             this.pbImagenes.Name = "pbImagenes";
             this.pbImagenes.Size = new System.Drawing.Size(249, 258);
-            this.pbImagenes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbImagenes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbImagenes.TabIndex = 0;
             this.pbImagenes.TabStop = false;
             // 
@@ -256,7 +256,6 @@
             this.Load += new System.EventHandler(this.VentanaDetalles_Load);
             this.flyplDatos.ResumeLayout(false);
             this.panelImagen.ResumeLayout(false);
-            this.panelImagen.PerformLayout();
             this.gbDatos.ResumeLayout(false);
             this.gbDatos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagenes)).EndInit();
