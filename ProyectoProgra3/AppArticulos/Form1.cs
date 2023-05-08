@@ -52,8 +52,8 @@ namespace AppArticulos
             cboCriterioBusqueda.Items.Add("Id");
             cboCriterioBusqueda.Items.Add("Codigo");
             cboCriterioBusqueda.Items.Add("Nombre");
-            cboCriterioBusqueda.Items.Add("IdMarca");
-            cboCriterioBusqueda.Items.Add("IdCategoria");
+            cboCriterioBusqueda.Items.Add("Marca");
+            cboCriterioBusqueda.Items.Add("Categoria");
 
             DatosDeArticulos negocio = new DatosDeArticulos();
             try
