@@ -56,8 +56,15 @@ namespace AppArticulos
             cboCriterioBusqueda.Items.Add("Categoria");
 
             DatosDeArticulos negocio = new DatosDeArticulos();
-            listaArticulos = negocio.listar();
-            dgvPrincipal.DataSource = listaArticulos;
+            try
+            {
+                listaArticulos = negocio.listar();
+                dgvPrincipal.DataSource = listaArticulos;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void itemAgregar_Click_1(object sender, EventArgs e)
@@ -82,7 +89,8 @@ namespace AppArticulos
 
         private void Boton_Detalles_Click(object sender, EventArgs e)
         {
-            VentanaDetalles VentanaDetalles = new VentanaDetalles();
+            Articulo seleccion = (Articulo)dgvPrincipal.CurrentRow.DataBoundItem;
+            VentanaDetalles VentanaDetalles = new VentanaDetalles(seleccion);
             VentanaDetalles.ShowDialog();
         }
 
