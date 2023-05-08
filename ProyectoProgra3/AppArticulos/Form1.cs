@@ -89,10 +89,10 @@ namespace AppArticulos
         private void itemModificar_Click(object sender, EventArgs e)
         {
             cboCriterioBusqueda.Items.Add("Id");
-            cboCriterioBusqueda.Items.Add("IdMarca");
-            cboCriterioBusqueda.Items.Add("IdCategoria");
             cboCriterioBusqueda.Items.Add("Nombre");
             cboCriterioBusqueda.Items.Add("Codigo");
+            cboCriterioBusqueda.Items.Add("IdMarca");
+            cboCriterioBusqueda.Items.Add("IdCategoria");
 
             Articulo Seleccion;
             Seleccion = (Articulo)dgvPrincipal.CurrentRow.DataBoundItem;
