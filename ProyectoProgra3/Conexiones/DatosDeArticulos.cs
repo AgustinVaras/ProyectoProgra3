@@ -126,7 +126,7 @@ namespace Conexiones
                 if (ManejoDeBusqueda(busqueda, criterio))
                 {
                     criterio = ManejoDeCriterio(criterio);
-                    Datos.Consulta("Select A.Id, A.Codigo, A.Nombre, A.Descripcion, A.Precio , C.Id Categoria, M.Id Marca From ARTICULOS A  Inner Join MARCAS M on A.IdMarca = M.Id Inner Join CATEGORIAS C on A.IdCategoria = C.Id where " + busqueda + " like " + criterio);
+                    Datos.Consulta("Select A.Id, A.Codigo, A.Nombre, A.Descripcion, A.Precio , C.Id Categoria, M.Id Marca From ARTICULOS A  Inner Join MARCAS M on A.IdMarca = M.Id Inner Join CATEGORIAS C on A.IdCategoria = C.Id where " + criterio + " like '" + busqueda + "'");
                     Datos.EjecutarLectura();
                     while (Datos.Lector.Read())
                     {
@@ -156,6 +156,10 @@ namespace Conexiones
 
         private string ManejoDeCriterio(string criterio)
         {
+            if (criterio == "Marca")
+                return "M.Descripcion";
+            if (criterio == "Categoria")
+                return "C.Descripcion";
             return "A." + criterio;
         }
 

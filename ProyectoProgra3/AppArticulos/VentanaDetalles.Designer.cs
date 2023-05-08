@@ -29,24 +29,24 @@
         private void InitializeComponent()
         {
             this.flyplDatos = new System.Windows.Forms.FlowLayoutPanel();
-            this.panelImagen = new System.Windows.Forms.Panel();
             this.gbDatos = new System.Windows.Forms.GroupBox();
-            this.lbNombre = new System.Windows.Forms.Label();
-            this.lbDescripcion = new System.Windows.Forms.Label();
-            this.lbMarca = new System.Windows.Forms.Label();
-            this.lbCategoria = new System.Windows.Forms.Label();
-            this.lbPrecio = new System.Windows.Forms.Label();
-            this.txbNombre = new System.Windows.Forms.TextBox();
-            this.txbMarca = new System.Windows.Forms.TextBox();
-            this.txbCategoria = new System.Windows.Forms.TextBox();
-            this.txbPrecio = new System.Windows.Forms.TextBox();
             this.rtxbDescripcion = new System.Windows.Forms.RichTextBox();
-            this.pbImagenes = new System.Windows.Forms.PictureBox();
-            this.btnDerecha = new System.Windows.Forms.Button();
+            this.txbPrecio = new System.Windows.Forms.TextBox();
+            this.txbCategoria = new System.Windows.Forms.TextBox();
+            this.txbMarca = new System.Windows.Forms.TextBox();
+            this.txbNombre = new System.Windows.Forms.TextBox();
+            this.lbPrecio = new System.Windows.Forms.Label();
+            this.lbCategoria = new System.Windows.Forms.Label();
+            this.lbMarca = new System.Windows.Forms.Label();
+            this.lbDescripcion = new System.Windows.Forms.Label();
+            this.lbNombre = new System.Windows.Forms.Label();
+            this.panelImagen = new System.Windows.Forms.Panel();
             this.btnIzquierda = new System.Windows.Forms.Button();
+            this.btnDerecha = new System.Windows.Forms.Button();
+            this.pbImagenes = new System.Windows.Forms.PictureBox();
             this.flyplDatos.SuspendLayout();
-            this.panelImagen.SuspendLayout();
             this.gbDatos.SuspendLayout();
+            this.panelImagen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagenes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,16 +57,6 @@
             this.flyplDatos.Name = "flyplDatos";
             this.flyplDatos.Size = new System.Drawing.Size(345, 310);
             this.flyplDatos.TabIndex = 0;
-            // 
-            // panelImagen
-            // 
-            this.panelImagen.Controls.Add(this.btnIzquierda);
-            this.panelImagen.Controls.Add(this.btnDerecha);
-            this.panelImagen.Controls.Add(this.pbImagenes);
-            this.panelImagen.Location = new System.Drawing.Point(374, 12);
-            this.panelImagen.Name = "panelImagen";
-            this.panelImagen.Size = new System.Drawing.Size(253, 310);
-            this.panelImagen.TabIndex = 1;
             // 
             // gbDatos
             // 
@@ -88,100 +78,18 @@
             this.gbDatos.TabStop = false;
             this.gbDatos.Text = "Articulo: ";
             // 
-            // lbNombre
+            // rtxbDescripcion
             // 
-            this.lbNombre.AutoSize = true;
-            this.lbNombre.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNombre.Location = new System.Drawing.Point(30, 30);
-            this.lbNombre.Name = "lbNombre";
-            this.lbNombre.Size = new System.Drawing.Size(55, 15);
-            this.lbNombre.TabIndex = 0;
-            this.lbNombre.Text = "Nombre:";
-            // 
-            // lbDescripcion
-            // 
-            this.lbDescripcion.AutoSize = true;
-            this.lbDescripcion.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDescripcion.Location = new System.Drawing.Point(9, 144);
-            this.lbDescripcion.Name = "lbDescripcion";
-            this.lbDescripcion.Size = new System.Drawing.Size(76, 15);
-            this.lbDescripcion.TabIndex = 1;
-            this.lbDescripcion.Text = "Descripción:";
-            // 
-            // lbMarca
-            // 
-            this.lbMarca.AutoSize = true;
-            this.lbMarca.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMarca.Location = new System.Drawing.Point(40, 56);
-            this.lbMarca.Name = "lbMarca";
-            this.lbMarca.Size = new System.Drawing.Size(43, 15);
-            this.lbMarca.TabIndex = 2;
-            this.lbMarca.Text = "Marca:";
-            // 
-            // lbCategoria
-            // 
-            this.lbCategoria.AutoSize = true;
-            this.lbCategoria.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCategoria.Location = new System.Drawing.Point(21, 82);
-            this.lbCategoria.Name = "lbCategoria";
-            this.lbCategoria.Size = new System.Drawing.Size(64, 15);
-            this.lbCategoria.TabIndex = 3;
-            this.lbCategoria.Text = "Categoría:";
-            // 
-            // lbPrecio
-            // 
-            this.lbPrecio.AutoSize = true;
-            this.lbPrecio.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPrecio.Location = new System.Drawing.Point(40, 108);
-            this.lbPrecio.Name = "lbPrecio";
-            this.lbPrecio.Size = new System.Drawing.Size(45, 15);
-            this.lbPrecio.TabIndex = 4;
-            this.lbPrecio.Text = "Precio:";
-            // 
-            // txbNombre
-            // 
-            this.txbNombre.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.txbNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txbNombre.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txbNombre.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbNombre.Location = new System.Drawing.Point(91, 28);
-            this.txbNombre.Multiline = true;
-            this.txbNombre.Name = "txbNombre";
-            this.txbNombre.ReadOnly = true;
-            this.txbNombre.Size = new System.Drawing.Size(136, 20);
-            this.txbNombre.TabIndex = 5;
-            this.txbNombre.TabStop = false;
-            this.txbNombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txbMarca
-            // 
-            this.txbMarca.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.txbMarca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txbMarca.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txbMarca.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbMarca.Location = new System.Drawing.Point(91, 54);
-            this.txbMarca.Multiline = true;
-            this.txbMarca.Name = "txbMarca";
-            this.txbMarca.ReadOnly = true;
-            this.txbMarca.Size = new System.Drawing.Size(136, 20);
-            this.txbMarca.TabIndex = 6;
-            this.txbMarca.TabStop = false;
-            this.txbMarca.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txbCategoria
-            // 
-            this.txbCategoria.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.txbCategoria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txbCategoria.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txbCategoria.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbCategoria.Location = new System.Drawing.Point(91, 80);
-            this.txbCategoria.Multiline = true;
-            this.txbCategoria.Name = "txbCategoria";
-            this.txbCategoria.ReadOnly = true;
-            this.txbCategoria.Size = new System.Drawing.Size(136, 20);
-            this.txbCategoria.TabIndex = 7;
-            this.txbCategoria.TabStop = false;
-            this.txbCategoria.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.rtxbDescripcion.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.rtxbDescripcion.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.rtxbDescripcion.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtxbDescripcion.Location = new System.Drawing.Point(91, 141);
+            this.rtxbDescripcion.Name = "rtxbDescripcion";
+            this.rtxbDescripcion.ReadOnly = true;
+            this.rtxbDescripcion.Size = new System.Drawing.Size(245, 157);
+            this.rtxbDescripcion.TabIndex = 9;
+            this.rtxbDescripcion.TabStop = false;
+            this.rtxbDescripcion.Text = "";
             // 
             // txbPrecio
             // 
@@ -199,37 +107,110 @@
             this.txbPrecio.Text = "$";
             this.txbPrecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // rtxbDescripcion
+            // txbCategoria
             // 
-            this.rtxbDescripcion.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.rtxbDescripcion.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.rtxbDescripcion.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtxbDescripcion.Location = new System.Drawing.Point(91, 141);
-            this.rtxbDescripcion.Name = "rtxbDescripcion";
-            this.rtxbDescripcion.ReadOnly = true;
-            this.rtxbDescripcion.Size = new System.Drawing.Size(245, 157);
-            this.rtxbDescripcion.TabIndex = 9;
-            this.rtxbDescripcion.TabStop = false;
-            this.rtxbDescripcion.Text = "";
+            this.txbCategoria.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txbCategoria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txbCategoria.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txbCategoria.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbCategoria.Location = new System.Drawing.Point(91, 80);
+            this.txbCategoria.Multiline = true;
+            this.txbCategoria.Name = "txbCategoria";
+            this.txbCategoria.ReadOnly = true;
+            this.txbCategoria.Size = new System.Drawing.Size(136, 20);
+            this.txbCategoria.TabIndex = 7;
+            this.txbCategoria.TabStop = false;
+            this.txbCategoria.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // pbImagenes
+            // txbMarca
             // 
-            this.pbImagenes.Location = new System.Drawing.Point(4, 4);
-            this.pbImagenes.Name = "pbImagenes";
-            this.pbImagenes.Size = new System.Drawing.Size(249, 258);
-            this.pbImagenes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbImagenes.TabIndex = 0;
-            this.pbImagenes.TabStop = false;
+            this.txbMarca.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txbMarca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txbMarca.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txbMarca.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbMarca.Location = new System.Drawing.Point(91, 54);
+            this.txbMarca.Multiline = true;
+            this.txbMarca.Name = "txbMarca";
+            this.txbMarca.ReadOnly = true;
+            this.txbMarca.Size = new System.Drawing.Size(136, 20);
+            this.txbMarca.TabIndex = 6;
+            this.txbMarca.TabStop = false;
+            this.txbMarca.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // btnDerecha
+            // txbNombre
             // 
-            this.btnDerecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDerecha.Location = new System.Drawing.Point(144, 268);
-            this.btnDerecha.Name = "btnDerecha";
-            this.btnDerecha.Size = new System.Drawing.Size(106, 32);
-            this.btnDerecha.TabIndex = 1;
-            this.btnDerecha.Text = "->";
-            this.btnDerecha.UseVisualStyleBackColor = true;
+            this.txbNombre.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txbNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txbNombre.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txbNombre.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbNombre.Location = new System.Drawing.Point(91, 28);
+            this.txbNombre.Multiline = true;
+            this.txbNombre.Name = "txbNombre";
+            this.txbNombre.ReadOnly = true;
+            this.txbNombre.Size = new System.Drawing.Size(136, 20);
+            this.txbNombre.TabIndex = 5;
+            this.txbNombre.TabStop = false;
+            this.txbNombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lbPrecio
+            // 
+            this.lbPrecio.AutoSize = true;
+            this.lbPrecio.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPrecio.Location = new System.Drawing.Point(40, 108);
+            this.lbPrecio.Name = "lbPrecio";
+            this.lbPrecio.Size = new System.Drawing.Size(45, 15);
+            this.lbPrecio.TabIndex = 4;
+            this.lbPrecio.Text = "Precio:";
+            // 
+            // lbCategoria
+            // 
+            this.lbCategoria.AutoSize = true;
+            this.lbCategoria.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCategoria.Location = new System.Drawing.Point(21, 82);
+            this.lbCategoria.Name = "lbCategoria";
+            this.lbCategoria.Size = new System.Drawing.Size(64, 15);
+            this.lbCategoria.TabIndex = 3;
+            this.lbCategoria.Text = "Categoría:";
+            // 
+            // lbMarca
+            // 
+            this.lbMarca.AutoSize = true;
+            this.lbMarca.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMarca.Location = new System.Drawing.Point(40, 56);
+            this.lbMarca.Name = "lbMarca";
+            this.lbMarca.Size = new System.Drawing.Size(43, 15);
+            this.lbMarca.TabIndex = 2;
+            this.lbMarca.Text = "Marca:";
+            // 
+            // lbDescripcion
+            // 
+            this.lbDescripcion.AutoSize = true;
+            this.lbDescripcion.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDescripcion.Location = new System.Drawing.Point(9, 144);
+            this.lbDescripcion.Name = "lbDescripcion";
+            this.lbDescripcion.Size = new System.Drawing.Size(76, 15);
+            this.lbDescripcion.TabIndex = 1;
+            this.lbDescripcion.Text = "Descripción:";
+            // 
+            // lbNombre
+            // 
+            this.lbNombre.AutoSize = true;
+            this.lbNombre.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNombre.Location = new System.Drawing.Point(30, 30);
+            this.lbNombre.Name = "lbNombre";
+            this.lbNombre.Size = new System.Drawing.Size(55, 15);
+            this.lbNombre.TabIndex = 0;
+            this.lbNombre.Text = "Nombre:";
+            // 
+            // panelImagen
+            // 
+            this.panelImagen.Controls.Add(this.btnIzquierda);
+            this.panelImagen.Controls.Add(this.btnDerecha);
+            this.panelImagen.Controls.Add(this.pbImagenes);
+            this.panelImagen.Location = new System.Drawing.Point(374, 12);
+            this.panelImagen.Name = "panelImagen";
+            this.panelImagen.Size = new System.Drawing.Size(253, 310);
+            this.panelImagen.TabIndex = 1;
             // 
             // btnIzquierda
             // 
@@ -240,6 +221,27 @@
             this.btnIzquierda.TabIndex = 2;
             this.btnIzquierda.Text = "<-";
             this.btnIzquierda.UseVisualStyleBackColor = true;
+            this.btnIzquierda.Click += new System.EventHandler(this.btnIzquierda_Click);
+            // 
+            // btnDerecha
+            // 
+            this.btnDerecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDerecha.Location = new System.Drawing.Point(144, 268);
+            this.btnDerecha.Name = "btnDerecha";
+            this.btnDerecha.Size = new System.Drawing.Size(106, 32);
+            this.btnDerecha.TabIndex = 1;
+            this.btnDerecha.Text = "->";
+            this.btnDerecha.UseVisualStyleBackColor = true;
+            this.btnDerecha.Click += new System.EventHandler(this.btnDerecha_Click);
+            // 
+            // pbImagenes
+            // 
+            this.pbImagenes.Location = new System.Drawing.Point(4, 4);
+            this.pbImagenes.Name = "pbImagenes";
+            this.pbImagenes.Size = new System.Drawing.Size(249, 258);
+            this.pbImagenes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbImagenes.TabIndex = 0;
+            this.pbImagenes.TabStop = false;
             // 
             // VentanaDetalles
             // 
@@ -255,9 +257,9 @@
             this.Text = "Detalles";
             this.Load += new System.EventHandler(this.VentanaDetalles_Load);
             this.flyplDatos.ResumeLayout(false);
-            this.panelImagen.ResumeLayout(false);
             this.gbDatos.ResumeLayout(false);
             this.gbDatos.PerformLayout();
+            this.panelImagen.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbImagenes)).EndInit();
             this.ResumeLayout(false);
 

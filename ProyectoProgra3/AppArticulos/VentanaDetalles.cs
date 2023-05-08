@@ -16,8 +16,8 @@ namespace AppArticulos
     {
         Articulo art = null;
         private List<Imagen> imagenes = null;
-        int imgActual = 1 ;
-        int cantImg;
+        int imgActual = 0 ;
+        int cantImg = 0;
 
         public VentanaDetalles(Articulo articulo)
         {
@@ -29,6 +29,7 @@ namespace AppArticulos
         {
             try
             {
+                
                 pbImagenes.Load(imagen);
             }
             catch (Exception ex)
@@ -38,8 +39,29 @@ namespace AppArticulos
             }
         }
 
-        private void VentanaDetalles_Load(object sender, EventArgs e)
+        private void ValidarBotones()
         {
+            if (imgActual == 0)
+            {
+                btnIzquierda.Enabled = false;
+                if (imgActual == cantImg)
+                {
+                    btnDerecha.Enabled = false;
+                    return;
+                }
+            }
+            else
+                btnIzquierda.Enabled = true;
+            if (imgActual + 1 == cantImg)
+                btnDerecha.Enabled = false;
+            else
+                btnDerecha.Enabled = true;
+            
+        }
+
+        private void VentanaDetalles_Load(object sender, EventArgs e)
+        {   
+            
             MarcaDatos md = new MarcaDatos();
             CategoriaDatos cd = new CategoriaDatos();
             ImagenesDatos id = new ImagenesDatos();
@@ -60,17 +82,43 @@ namespace AppArticulos
 
                 imagenes = id.Buscar("IdArticulo", art.Id.ToString());
 
-                if(imagenes != null)
+                if (imagenes != null)
                 {
                     cantImg = imagenes.Count();
                     CargarImagen(imagenes[imgActual].ImagenUrl);
                 }
+                else
+                    CargarImagen("");
 
             }
             catch (Exception ex)
             {
 
                 throw ex;
+            }
+            finally
+            {
+                ValidarBotones();
+            }
+        }
+
+        private void btnDerecha_Click(object sender, EventArgs e)
+        {
+            if (imgActual+1 < cantImg)
+            {
+                imgActual++;
+                CargarImagen(imagenes[imgActual].ImagenUrl);
+                ValidarBotones();
+            }
+        }
+
+        private void btnIzquierda_Click(object sender, EventArgs e)
+        {
+            if (imgActual > 0)
+            {
+                imgActual--;
+                CargarImagen(imagenes[imgActual].ImagenUrl);
+                ValidarBotones();
             }
         }
     }

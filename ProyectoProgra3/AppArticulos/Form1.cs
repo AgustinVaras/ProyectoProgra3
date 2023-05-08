@@ -116,7 +116,17 @@ namespace AppArticulos
         {
             DatosDeArticulos datos = new DatosDeArticulos();
             busquedaArticulos = datos.Buscar(TextBox_Buscar.Text, cboCriterioBusqueda.Text);
-            
+            //switch (cboCriterioBusqueda.Text)
+            //{
+            //    case "Id":
+            //        busquedaArticulos = datos.Buscar(TextBox_Buscar.Text, "Id");
+            //        break;
+
+            //    default:
+            //        MessageBox.Show("Seleccione un criterio de busqueda");
+            //        break;
+            //}
+
             if (!busquedaArticulos.Any<Articulo>())
                 MessageBox.Show("Su búsqueda no arrojó ningún resultado");
             else
