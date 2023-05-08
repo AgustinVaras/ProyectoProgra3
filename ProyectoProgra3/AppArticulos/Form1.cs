@@ -114,5 +114,32 @@ namespace AppArticulos
             else
                 dgvPrincipal.DataSource = busquedaArticulos;
         }
+
+        private void itemEliminar_Click(object sender, EventArgs e)
+        {
+
+            DatosDeArticulos Negocio = new DatosDeArticulos();
+            Articulo Seleccion;
+            try
+            {
+                DialogResult Respuesta =  MessageBox.Show("Seguro que desea eliminar el articulo?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                
+                if(Respuesta == DialogResult.Yes)
+                {
+                    Seleccion = (Articulo)dgvPrincipal.CurrentRow.DataBoundItem;
+                    Negocio.Eliminar(Seleccion.Id);
+                    ActulizarListado();
+
+                }
+                
+               
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+
+        }
     }
 }
