@@ -68,8 +68,11 @@ namespace Conexiones
             {
                 Datos.Consulta("Select Id, IdArticulo, ImagenUrl From Imagenes Where " + TipoBusqueda + " LIKE '" + Valor + "'");
                 Datos.EjecutarLectura();
+                
+                bool encontro = false;
                 while (Datos.Lector.Read())
                 {
+                    encontro = true;
                     Imagen aux = new Imagen();
                     aux.Id = (int)Datos.Lector["Id"];
                     aux.IdArticulo = (int)Datos.Lector["IdArticulo"];
@@ -77,7 +80,10 @@ namespace Conexiones
 
                     busqueda.Add(aux);
                 }
-                return busqueda;
+                if (encontro)
+                    return busqueda;
+                else
+                    return null;
             }
             catch (Exception ex)
             {

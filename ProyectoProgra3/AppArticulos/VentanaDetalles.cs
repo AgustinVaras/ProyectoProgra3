@@ -15,8 +15,8 @@ namespace AppArticulos
     public partial class VentanaDetalles : Form
     {
         Articulo art = null;
-        private List<Imagen> imagenes = new List<Imagen>();
-        int imgActual = 0 ;
+        private List<Imagen> imagenes = null;
+        int imgActual = 1 ;
         int cantImg;
 
         public VentanaDetalles(Articulo articulo)
@@ -58,10 +58,14 @@ namespace AppArticulos
 
                 rtxbDescripcion.Text = art.Descripcion.ToString();
 
-                imagenes = id.Listar();
+                imagenes = id.Buscar("IdArticulo", art.Id.ToString());
 
-                cantImg = imagenes.Count();
-                CargarImagen(imagenes[imgActual].ImagenUrl);
+                if(imagenes != null)
+                {
+                    cantImg = imagenes.Count();
+                    CargarImagen(imagenes[imgActual].ImagenUrl);
+                }
+
             }
             catch (Exception ex)
             {
