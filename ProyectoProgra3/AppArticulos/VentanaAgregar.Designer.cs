@@ -61,7 +61,7 @@ namespace AppArticulos
             this.txtCodigoArticulo.Location = new System.Drawing.Point(113, 19);
             this.txtCodigoArticulo.Name = "txtCodigoArticulo";
             this.txtCodigoArticulo.Size = new System.Drawing.Size(212, 20);
-            this.txtCodigoArticulo.TabIndex = 0;
+            this.txtCodigoArticulo.TabIndex = 1;
             // 
             // Label_CodigoArticulo
             // 
@@ -131,14 +131,14 @@ namespace AppArticulos
             this.txtNombre.Location = new System.Drawing.Point(113, 52);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(212, 20);
-            this.txtNombre.TabIndex = 8;
+            this.txtNombre.TabIndex = 2;
             // 
             // txtPrecio
             // 
             this.txtPrecio.Location = new System.Drawing.Point(113, 148);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(212, 20);
-            this.txtPrecio.TabIndex = 9;
+            this.txtPrecio.TabIndex = 5;
             this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecio_KeyPress);
             // 
             // cbMarca
@@ -148,7 +148,7 @@ namespace AppArticulos
             this.cbMarca.Location = new System.Drawing.Point(113, 82);
             this.cbMarca.Name = "cbMarca";
             this.cbMarca.Size = new System.Drawing.Size(212, 21);
-            this.cbMarca.TabIndex = 11;
+            this.cbMarca.TabIndex = 3;
             // 
             // cbCategoria
             // 
@@ -157,7 +157,7 @@ namespace AppArticulos
             this.cbCategoria.Location = new System.Drawing.Point(113, 113);
             this.cbCategoria.Name = "cbCategoria";
             this.cbCategoria.Size = new System.Drawing.Size(212, 21);
-            this.cbCategoria.TabIndex = 12;
+            this.cbCategoria.TabIndex = 4;
             // 
             // grbFormulario
             // 
@@ -201,7 +201,7 @@ namespace AppArticulos
             this.btnEliminarImg.Location = new System.Drawing.Point(108, 176);
             this.btnEliminarImg.Name = "btnEliminarImg";
             this.btnEliminarImg.Size = new System.Drawing.Size(140, 23);
-            this.btnEliminarImg.TabIndex = 18;
+            this.btnEliminarImg.TabIndex = 3;
             this.btnEliminarImg.Text = "Eliminar Url Seleccionada";
             this.btnEliminarImg.UseVisualStyleBackColor = true;
             this.btnEliminarImg.Click += new System.EventHandler(this.btnEliminarImg_Click);
@@ -220,7 +220,7 @@ namespace AppArticulos
             this.btnCargarImagen.Location = new System.Drawing.Point(401, 19);
             this.btnCargarImagen.Name = "btnCargarImagen";
             this.btnCargarImagen.Size = new System.Drawing.Size(75, 23);
-            this.btnCargarImagen.TabIndex = 16;
+            this.btnCargarImagen.TabIndex = 1;
             this.btnCargarImagen.Text = "Cargar";
             this.btnCargarImagen.UseVisualStyleBackColor = true;
             this.btnCargarImagen.Click += new System.EventHandler(this.btnCargarImagen_Click);
@@ -230,7 +230,7 @@ namespace AppArticulos
             this.txtUrl.Location = new System.Drawing.Point(108, 19);
             this.txtUrl.Name = "txtUrl";
             this.txtUrl.Size = new System.Drawing.Size(288, 20);
-            this.txtUrl.TabIndex = 14;
+            this.txtUrl.TabIndex = 0;
             // 
             // lwImagenes
             // 
@@ -238,7 +238,7 @@ namespace AppArticulos
             this.lwImagenes.Location = new System.Drawing.Point(108, 45);
             this.lwImagenes.Name = "lwImagenes";
             this.lwImagenes.Size = new System.Drawing.Size(288, 124);
-            this.lwImagenes.TabIndex = 15;
+            this.lwImagenes.TabIndex = 2;
             this.lwImagenes.UseCompatibleStateImageBehavior = false;
             this.lwImagenes.View = System.Windows.Forms.View.List;
             this.lwImagenes.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.lwImagenes_ItemSelectionChanged);
@@ -248,7 +248,7 @@ namespace AppArticulos
             this.rtxtDescripcion.Location = new System.Drawing.Point(113, 178);
             this.rtxtDescripcion.Name = "rtxtDescripcion";
             this.rtxtDescripcion.Size = new System.Drawing.Size(289, 54);
-            this.rtxtDescripcion.TabIndex = 13;
+            this.rtxtDescripcion.TabIndex = 6;
             this.rtxtDescripcion.Text = "";
             // 
             // btnAgregar
@@ -256,7 +256,7 @@ namespace AppArticulos
             this.btnAgregar.Location = new System.Drawing.Point(381, 486);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(138, 45);
-            this.btnAgregar.TabIndex = 14;
+            this.btnAgregar.TabIndex = 0;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
@@ -266,7 +266,7 @@ namespace AppArticulos
             this.btnCancelar.Location = new System.Drawing.Point(212, 486);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(138, 45);
-            this.btnCancelar.TabIndex = 15;
+            this.btnCancelar.TabIndex = 1;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -275,10 +275,11 @@ namespace AppArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(714, 543);
+            this.ClientSize = new System.Drawing.Size(674, 543);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.grbFormulario);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "VentanaAgregar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VentanaAgregar";

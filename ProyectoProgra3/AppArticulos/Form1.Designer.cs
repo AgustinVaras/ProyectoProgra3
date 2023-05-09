@@ -54,14 +54,14 @@ namespace AppArticulos
             this.TextBox_Buscar.Location = new System.Drawing.Point(193, 14);
             this.TextBox_Buscar.Name = "TextBox_Buscar";
             this.TextBox_Buscar.Size = new System.Drawing.Size(194, 20);
-            this.TextBox_Buscar.TabIndex = 1;
+            this.TextBox_Buscar.TabIndex = 2;
             // 
             // Boton_Buscar
             // 
             this.Boton_Buscar.Location = new System.Drawing.Point(394, 14);
             this.Boton_Buscar.Name = "Boton_Buscar";
             this.Boton_Buscar.Size = new System.Drawing.Size(95, 21);
-            this.Boton_Buscar.TabIndex = 2;
+            this.Boton_Buscar.TabIndex = 3;
             this.Boton_Buscar.Text = "Buscar";
             this.Boton_Buscar.UseVisualStyleBackColor = true;
             this.Boton_Buscar.Click += new System.EventHandler(this.Boton_Buscar_Click);
@@ -82,7 +82,7 @@ namespace AppArticulos
             this.cboCriterioBusqueda.Location = new System.Drawing.Point(77, 13);
             this.cboCriterioBusqueda.Name = "cboCriterioBusqueda";
             this.cboCriterioBusqueda.Size = new System.Drawing.Size(109, 21);
-            this.cboCriterioBusqueda.TabIndex = 7;
+            this.cboCriterioBusqueda.TabIndex = 1;
             // 
             // menuStrip1
             // 
@@ -94,7 +94,7 @@ namespace AppArticulos
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(541, 24);
-            this.menuStrip1.TabIndex = 8;
+            this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // nuevoToolStripMenuItem
@@ -124,14 +124,14 @@ namespace AppArticulos
             // itemModificar
             // 
             this.itemModificar.Name = "itemModificar";
-            this.itemModificar.Size = new System.Drawing.Size(180, 22);
+            this.itemModificar.Size = new System.Drawing.Size(125, 22);
             this.itemModificar.Text = "Modificar";
             this.itemModificar.Click += new System.EventHandler(this.itemModificar_Click);
             // 
             // itemEliminar
             // 
             this.itemEliminar.Name = "itemEliminar";
-            this.itemEliminar.Size = new System.Drawing.Size(180, 22);
+            this.itemEliminar.Size = new System.Drawing.Size(125, 22);
             this.itemEliminar.Text = "Eliminar";
             this.itemEliminar.Click += new System.EventHandler(this.itemEliminar_Click);
             // 
@@ -162,7 +162,7 @@ namespace AppArticulos
             this.Boton_Detalles.Location = new System.Drawing.Point(370, 294);
             this.Boton_Detalles.Name = "Boton_Detalles";
             this.Boton_Detalles.Size = new System.Drawing.Size(123, 33);
-            this.Boton_Detalles.TabIndex = 8;
+            this.Boton_Detalles.TabIndex = 0;
             this.Boton_Detalles.Text = "Detalles";
             this.Boton_Detalles.UseVisualStyleBackColor = true;
             this.Boton_Detalles.Click += new System.EventHandler(this.Boton_Detalles_Click);
@@ -173,7 +173,7 @@ namespace AppArticulos
             this.dgvPrincipal.Location = new System.Drawing.Point(17, 14);
             this.dgvPrincipal.Name = "dgvPrincipal";
             this.dgvPrincipal.Size = new System.Drawing.Size(476, 274);
-            this.dgvPrincipal.TabIndex = 7;
+            this.dgvPrincipal.TabIndex = 1;
             // 
             // Ventana_Principal
             // 
