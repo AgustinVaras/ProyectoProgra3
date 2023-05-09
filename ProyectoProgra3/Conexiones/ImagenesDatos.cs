@@ -97,5 +97,28 @@ namespace Conexiones
 
 
         }
+
+        public void Eliminar(int Id)
+        {
+
+
+            try
+            {
+                AccesoSQL datos = new AccesoSQL();
+                datos.Consulta("DELETE from IMAGENES where Id = @Id");
+                datos.SetParametros("@Id", Id);
+                datos.EjecutarAccion();
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+        }
+
+
     }
 }

@@ -14,7 +14,7 @@ namespace AppArticulos
 {
     public partial class VentanaAgregar : Form
     {
-        private List<Imagen> imagenes = null;
+        private List<Imagen> imagenes = new List<Imagen>();
         private List<Imagen> nuevasImg = new List<Imagen>();
 
         private Articulo articulo = null;
@@ -83,7 +83,9 @@ namespace AppArticulos
                         {
                             lwImagenes.Items.Add(img.ImagenUrl);
                         }
+
                     }
+                    
 
                 }
 
@@ -156,16 +158,30 @@ namespace AppArticulos
 
         private void btnCargarImagen_Click(object sender, EventArgs e)
         {
-            if (imagenes == null)
-                imagenes = new List<Imagen>();
+            try
+            {
+                if (imagenes == null)
+                    imagenes = new List<Imagen>();
 
-            Imagen imagen = new Imagen();
-            imagen.ImagenUrl = txtUrl.Text;
-            lwImagenes.Items.Add(imagen.ImagenUrl);
-            imagenes.Add(imagen);
+                Imagen imagen = new Imagen();
+                imagen.ImagenUrl = txtUrl.Text;
+                lwImagenes.Items.Add(imagen.ImagenUrl);
+                imagenes.Add(imagen);
 
-            if (articulo != null)
-                nuevasImg.Add(imagen);
+                if (articulo != null)
+                    nuevasImg.Add(imagen);
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                txtUrl.Text = "";
+            }
+
         }
 
 
@@ -197,8 +213,17 @@ namespace AppArticulos
 
         private void btnEliminarImg_Click(object sender, EventArgs e)
         {
+            ImagenesDatos imgDatos = new ImagenesDatos();
+            foreach (Imagen img in imagenes)
+            {
+                if (lwImagenes.FocusedItem.Text == img.ImagenUrl && articulo != null)
+                {
+                    imgDatos.Eliminar(img.Id);
+                }
+                    
+            }           
             lwImagenes.FocusedItem.Remove();
-            CargarImagen("");
+            CargarImagen("");                           
         }
     }
 }
