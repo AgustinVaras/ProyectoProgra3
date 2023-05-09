@@ -14,7 +14,8 @@ namespace AppArticulos
 {
     public partial class VentanaAgregar : Form
     {
-        private List<Imagen> imagenes = new List<Imagen>();
+        private List<Imagen> imagenes = null;
+        private List<Imagen> nuevasImg = new List<Imagen>();
 
         private Articulo articulo = null;
 
@@ -75,6 +76,14 @@ namespace AppArticulos
                     cbMarca.SelectedValue = articulo.IdCategoria;
                     //lwImagenes.item = imgData.Buscar("IdArticulo", articulo.Id.ToString());
 
+                    imagenes = imgData.Buscar("IdArticulo", articulo.Id.ToString());
+                    if(imagenes != null)
+                    {
+                        foreach (Imagen img in imagenes)
+                        {
+                            lwImagenes.Items.Add(img.ImagenUrl);
+                        }
+                    }
 
                 }
 
@@ -113,6 +122,11 @@ namespace AppArticulos
                 if(articulo.Id != 0)
                 {
                     dato.Modificar(articulo);
+                    foreach (Imagen img in nuevasImg)
+                    {
+                        img.IdArticulo = articulo.Id;
+                        imgData.Agregar(img);
+                    }
                     MessageBox.Show("Modificado con éxito!");
 
                 }
@@ -142,10 +156,16 @@ namespace AppArticulos
 
         private void btnCargarImagen_Click(object sender, EventArgs e)
         {
+            if (imagenes == null)
+                imagenes = new List<Imagen>();
+
             Imagen imagen = new Imagen();
             imagen.ImagenUrl = txtUrl.Text;
             lwImagenes.Items.Add(imagen.ImagenUrl);
             imagenes.Add(imagen);
+
+            if (articulo != null)
+                nuevasImg.Add(imagen);
         }
 
 
